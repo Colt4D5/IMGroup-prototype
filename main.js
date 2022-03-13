@@ -1,17 +1,11 @@
-import './src/scss/style.module.scss'
-import './src/scss/_globals.scss';
-import './src/scss/_foundation.scss';
-import './src/scss/headers/_header.5.scss';
-import './src/scss/promos/_promos.8.scss';
-import './src/scss/_intro.scss';
-import './src/scss/_interior.scss';
-import './src/scss/_mobile-menu.1.scss';
-import './src/scss/footers/_footer.2.scss';
+// imports all forwarded scss files into /src/scss/_index.scss
+import './src/scss/index.scss';
 
-import './src/js/cursor.js';
-import './src/js/headers.js';
-import './src/js/nav-menu.js';
-import './src/js/site.js';
-import './src/js/swiper.js';
+import './src/js/cursor';
+import './src/js/headers';
+import './src/js/nav-menu';
+import './src/js/site';
+import './src/js/swiper';
+import './src/js/team'
 
 // watch and compile with `vite build --watch` command
