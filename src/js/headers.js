@@ -11,11 +11,11 @@
 function handleHeaderImgs() {
   if (innerWidth < 640) {
     headers.forEach(hdr => {
-      hdr.style.backgroundImage = `url(${hdr.dataset.mobileUrl})`
+      hdr.style.backgroundImage = `url(${hdr.dataset.mobileUrl})`;
     })
   } else {
     headers.forEach(hdr => {
-      hdr.style.backgroundImage = `url(${hdr.dataset.desktopUrl})`
+      hdr.style.backgroundImage = `url(${hdr.dataset.desktopUrl})`;
     })
   }
 }

@@ -236,7 +236,9 @@ function add_custom_assets() {
   foreach( glob( get_template_directory(). '/dist/assets/*.js' ) as $file ) {
   $file = str_replace(get_template_directory(), '', $file);
   // $file contains the name and extension of the file
-  wp_enqueue_script( $file . 'script', get_template_directory_uri() . $file);
+  wp_register_script( $file . 'script', get_template_directory_uri() . $file, [],'1.0.0', true);
+
+	wp_enqueue_script( $file . 'script' );
   }
 }
 add_action('wp_enqueue_scripts', 'add_custom_assets');
@@ -254,7 +256,7 @@ add_filter( 'wp_theme_editor_filetypes', 'add_custom_editor_file_types' );
 
 // register Salon Info Settings page
 // require_once(get_stylesheet_directory() . '/assets/functions/salon_info.php');
-require_once(get_stylesheet_directory() . '/assets/functions/salon_test.php');
+// require_once(get_stylesheet_directory() . '/assets/functions/salon_test.php');
 
 
 /**
