@@ -69,6 +69,29 @@ body.accessibility-enabled a:focus {
   }
 }
 
+// skip content button
+.skip-link.screen-reader-text {
+	position: absolute;
+	left: 0.25rem;
+	top: 0.25rem;
+	padding: 1.25rem 2rem;
+	background-color: #eee;
+	color: #000;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	cursor: pointer;
+}
+
+.skip-link.screen-reader-text:focus {
+	opacity: 1;
+}
+
+#footer .footer #footer-top #inner {
+	background: url(/wp-content/uploads/2022/03/footer_bg_texture-1024x240-1.webp), #00344d;
+	background-size: cover;
+}
+
 a.button {
   background-color: $primary;
   padding: 0.75rem 1.5rem;
