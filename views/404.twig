@@ -1,0 +1,12 @@
+{% extends "base.twig" %}
+
+{% block header %}
+	{{ parent() }}
+	{% include 'components/headerimage.1.twig' %}
+{% endblock %}
+
+{% block content %}
+	<h1>404 Error</h1>
+	<p>Sorry, we couldn't find what you're looking for.</p>
+	<img id="tumbleweed" src="/wp-content/uploads/2022/03/tumbleweed-1.png" alt="tumbleweed" />
+{% endblock %}

@@ -1,0 +1,89 @@
+@use '../mixins' as *;
+@use '../globals' as *;
+
+#promos {
+  background-color: hsl(204, 38%, 82%);
+  #promos-wrapper {
+    max-width: $row-width;
+    margin: 0 auto;
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    @include breakpoint(large) {
+      flex-direction: row;
+    }
+    .promo-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 375px;
+      padding: 0;
+      margin: 1rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 8px 5px 8px rgb(0 0 0 / 0.4);
+      transition: all 0.5s ease-in-out;
+      &:nth-child(1):hover {
+        transform: scale(1.06);
+      }
+      &:nth-child(3):hover {
+        transform: scale(1.06);
+      }
+      @include breakpoint(large) {
+        &:nth-child(2) {
+          transform: scale(1.04);
+          z-index:2;
+          &:hover {
+            transform: scale(1.06);
+          }
+        }
+        &:not(:nth-child(2)) .promo_text {
+          background-color: darken($primary, 3%);
+        }
+        &:not(:nth-child(2)):hover .promo_text {
+          background-color: lighten($primary, 5%);
+        }
+        &:nth-child(2):hover .promo_text {
+          background-color: lighten($primary, 5%);
+        }
+        &:nth-child(1):hover {
+          transform: scale(1.06) translateX(-12px);
+        }
+        &:nth-child(3):hover {
+          transform: scale(1.06) translateX(12px);
+        }
+      }
+      &:hover {
+        z-index: 3;
+        &:nth-child(2) { transform: scale(1.1) !important; }
+      }
+      a {
+        text-decoration: none;
+        font-weight: 300;
+      }
+      .photo {
+        width: 375px;
+        height: 375px;
+        background-size: cover;
+        background-position: center;
+      }
+      .promo_text {
+        padding: 1.5rem;
+        background-color: $primary;
+        color: $light;
+        transition: background-color 0.5s ease;
+        h3 {
+          color: $light;
+          text-transform: uppercase;
+          margin: 0.25rem;
+        }
+      }
+    }
+  }
+}

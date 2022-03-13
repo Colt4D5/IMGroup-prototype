@@ -1,0 +1,115 @@
+@use '../mixins' as *;
+@use '../globals' as *;
+
+$promo_height: 260px;
+$promo_height_lg: 200px;
+
+#promos {
+  background-color: $secondary;
+  z-index: 9999999;
+  position: relative;
+  @include breakpoint(medium) {
+    padding-top: 1rem;
+  }
+  #promos-wrapper { // row
+    width: min(85%, 350px);
+    padding: 4rem 0;
+    #blog-wrapper {
+      background-color: $dark;
+      text-align: center;
+      width: calc(100% - 1rem);
+      min-height: calc($promo_height * 1.75 + 100px);
+      margin-bottom: 2rem;
+      color: $light;
+      position: relative;
+      @include breakpoint(medium) {
+        width: 33.33333%;
+      }
+      .inner {
+        border: 2px solid $light;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include breakpoint(medium) {
+          padding: 4rem 3rem;
+        }
+        h3 {
+          color: $light;
+        }
+        .button {
+          cursor: pointer;
+        }
+      }
+    }
+    #promos-stack {
+      padding: 0;
+    }
+    .promo-box {
+      position: relative;
+      margin: 0 auto 1rem;
+      padding: 0;
+      overflow: hidden;
+      .photo {
+        display: block;
+        height: $promo_height;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s ease;
+      }
+      .promo_text {
+        pointer-events: none;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        color: $light;
+        padding: 0.75rem;
+        background-color: rgba(0,0,0,0.5);
+        transition: background-color 0.3s ease;
+      }
+      &:hover {
+        .photo {
+          transform: scale(1.05);
+        }
+        .promo_text {
+          background-color: rgba(50,50,50,0.5);
+        }
+      }
+    }
+    & > .promo-box {
+      .photo {
+        height: calc($promo_height * 1.75);
+      }
+    }
+    @include breakpoint(medium) {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      width: auto;
+      padding:  0 3rem;
+      transform: translateY(-6rem);
+      .columns {
+        // height: 75%;
+        margin: 1rem;
+        .photo {
+          height: $promo_height_lg
+        }
+        &:nth-child(2) {
+          margin: 1rem 0 2rem;
+          height: calc($promo_height_lg * 2 + 1rem);
+          .photo {
+            height: calc($promo_height_lg * 2 + 1rem);
+          }
+        }
+      }
+    }
+  }
+}

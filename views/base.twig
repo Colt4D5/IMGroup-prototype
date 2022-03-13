@@ -1,0 +1,49 @@
+{% block html_head_container %}
+
+	{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+
+		<div id="cursor"></div>
+
+		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+		<header class="header" >
+			{% block mobile_menu %}
+				{% include 'mobile-menus/mobile-menu.1.twig' %}
+			{% endblock %}
+			{% block header %}
+				{% include 'headers/header.2.twig' %}
+				{# {% include 'headers/header.2.twig' %} #}
+			{% endblock %}
+		</header>
+
+		<section id="content" aria-label="body content" class="{% if fn('is_front_page') %}home{% endif %} content-wrapper {% if not fn('is_front_page') %}row{% endif %}" aria-labelledby="title">
+			{% if sidebar %}
+				<aside id="sidebar" class="sidebar sidebar-wrapper large-4 medium-12 columns {{ post.id }}-sidebar" role="complementary" data-equalizer-watch>
+					{% block sidebar %}
+						testing!
+					{% endblock %}
+				</aside>
+			{% endif %}
+			{# {% if title %}<h1 id="title">{{title}}</h1>{% endif %} #}
+			<main class="wrapper {% if sidebar %}large-8 columns{% endif %}">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</main>
+		</section>
+
+		
+		{% block footer %}
+			<footer id="footer">
+				{# {% include 'footers/footer.1.twig' %} #}
+				{% include 'footers/footer.2.twig' %}
+			</footer>
+		{% endblock %}
+		{{ function('wp_footer') }}
+	</body>
+</html>

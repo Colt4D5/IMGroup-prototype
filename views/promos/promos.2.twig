@@ -1,0 +1,17 @@
+{% set bg_img = promo.custom_promo_image %}
+{# {% if promo.custom_promo %} {{ Image(promo.custom_promo_image).src }} {% endif %} #}
+<section id="promos" aria-label="Promos">
+  <div id="promos-wrapper">
+    {% for promo in promos %}
+        <div class="promo-box medium-4 columns">
+            <a class="photo" href="{{ promo.promo_link }}" {% if promo.promo_target %} target="_blank" {% endif %} style="background-image: url({{ Image(promo.custom_promo_image).src }})">
+              {# <img src="{% if promo.custom_promo %} {{ Image(promo.custom_promo_image).src }} {% endif %}" alt="" /> #}
+            </a>
+            <div class="promo_text">
+              {{ promo.promo_text }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+  <div class="clear"></div>
+</section><!-- end #promos -->

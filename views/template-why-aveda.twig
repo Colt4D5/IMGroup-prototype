@@ -1,0 +1,48 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+  {{ parent() }}
+	{% include 'components/headerimage.1.twig' %}
+{% endblock %}
+
+{% block sidebar %}
+	{% include 'sidebar.twig' %}
+{% endblock %}
+
+{% block content %}
+  <h1 class="page-title">{{post.title}}</h1>
+  <p><strong>Our mission at Aveda is to care for the world we live in, from the products we make to the ways in which we give back to society. At Aveda, we strive to set an example for environmental leadership and responsibility, not just in the world of beauty, but around the world.</strong></p>
+
+  <p>Aveda salons and spas are founded on the common goal of caring for you while caring for our earth and all its living beings. Our Aveda professionals are trained to serve your every need and provide exemplary services. </p>
+
+  <p>Aveda was founded in 1978 by world-class hairstylist Horst Rechelbacher, with the vision to provide beauty professionals with botanical products that would be good for them, their guests, and the Earth. The name “Aveda” comes from Ayurveda, the traditional Hindu system of holistic wellness based on balance between body, mind and soul. </p>
+
+  <p>As a beauty and wellness brand, Aveda represents an opportunity to create positive change, starting with the products we use on our hair and skin and how those products are made. Rechelbacher believed that “even the simplest, seemingly insignificant choices we make in our daily lives—what to eat, what to wear, what to use on our bodies and in our homes—have a ripple effect that reaches far beyond us personally.”</p>
+
+  <p>Aveda products have always been cruelty free and, starting in 2021, are 100% vegan. They are non-toxic and created with pure botanical ingredients that deliver powerful and proven results. Aveda uses sustainable and environmentally responsible production and packaging practices. </p>
+
+  <p>You will see Ayurvedic influences throughout your Aveda salon or spa experience, in the Aveda Rituals that will relax and transport you, including: </p>
+
+  <ul>
+    <li>Cup of Aveda Comforting Tea</li>
+    <li>Pure flower and plant aromas to enliven the senses</li>
+    <li>Stress-relieving scalp and shoulder massage</li>
+    <li>Luxurious neck, shoulder and hand massages</li>
+    <li>Makeup or hair finishing touch</li>
+  </ul>
+
+  <p>Aveda salon and spa professionals are constantly educated throughout their careers to hone their skills, as “Learning Never Ends” is one of Aveda’s core values. They stay up to date with the latest trends and techniques to elevate your look. Aveda spa professionals also undergo regular training to stay informed of the most recent advancements in body and skin care so they can expertly practice the art of healing, rejuvenating and refreshing the mind, body, and spirit.</p>
+
+  <p>Aveda service providers understand how to listen to your needs and conduct a thorough consultation with you, so you can be comfortable and confident that your experience with us is everything you wanted and more.</p>
+
+  <blockquote class=" with_quote_icon">
+  <h5 class="blockquote-text">AT AVEDA, WE BELIEVE THAT BEAUTY IS AS BEAUTY DOES℠ AND LIVE THAT MISSION EVERY DAY.</h5>
+  </blockquote>
+
+  <p>We live our mission through our use of 100% post-consumer recycled material in our packaging, 100% wind-generated power in our manufacturing, and by donating over $65 million since 1999 to preserve and protect the environment around the world.</p>
+
+  <p>Aveda has also donated millions of dollars over the years to organizations funding breast cancer research, disaster relief, animal rescue and other causes.</p>
+
+  <a href="https://www.aveda.com/locator/get_the_facts.tmpl?vanity=1&SalonID={{ client_aveda_id }}" target="_blank" rel="noopener noreferrer" class="button">Discover Aveda</a>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+<section id="promos" aria-label="Promos" class="row expanded">
+
+  <div id="promos-wrapper" class="medium-6 column">
+    {% for promo in promos %}
+      <div class="promo-box">
+        <a href="{{ promo.promo_link }}" {% if promo.promo_target %} target="_blank" {% endif %}>
+          <div class="photo" style="background-image: url({% if promo.custom_promo %} {{ Image(promo.custom_promo_image).src }} {% endif %});"></div>
+          <div class="promo_text">
+            <a class="button promo-link" href="{{ promo.promo_link }}" {% if promo.promo_target %} target="_blank" {% endif %}>{{ promo.promo_cta }}</a>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+    {# UNCOMMENT THIS OUT ONLY 3 PROMOS #}
+    {# <div class="promo-box">
+      <div class="photo" style="background-image: url({% if promo.custom_promo %} {{ Image(promo.custom_promo_image).src }} {% endif %});"></div>
+      <div class="promo_text">
+        <a class="button promo-link" href="#">TEXT GOES HERE</a>
+      </div>
+    </div> #}
+  </div>
+
+  <div id="promo-copy" class="medium-6 column">
+    <div class="inner">
+      <h3>Accolades</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Pellentesque nec nam aliquam sem. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Purus sit amet volutpat consequat mauris nunc congue nisi vitae. Mauris sit amet massa vitae tortor condimentum lacinia quis vel.</p>
+    </div>
+  </div>
+
+
+
+
+  <div class="clear"></div>
+</section><!-- end #promos -->

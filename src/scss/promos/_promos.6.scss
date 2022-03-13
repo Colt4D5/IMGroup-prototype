@@ -1,0 +1,120 @@
+@use '../mixins' as *;
+@use '../globals' as *;
+
+$photo_height: 300px;
+$photo_height_lrg: 450px;
+
+#promos {
+  background-color: hsl(204, 38%, 82%);
+  #promos-wrapper {
+    max-width: $row-width;
+    margin: 0 auto;
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    @include breakpoint(medium) {
+      width: min(90%, $row-width);
+      margin: 0 auto;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 0 1rem;
+      // grid-gap:50px 30px;
+    }
+    @include breakpoint(large) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 0 1.5rem;
+    }
+    .promo-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 375px;
+      padding: 0;
+      margin: 1rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 8px 5px 8px rgb(0 0 0 / 0.4);
+      transition: all 0.5s ease-in-out;
+      min-height: calc($photo_height + 116px);
+      width: min(85%, 375px);
+      @include breakpoint(medium) {
+        width: auto;
+      }
+      &.bottom-row {
+        &:hover {
+          // .promo_text {
+          //   background-color: transparent;
+          // }
+        }
+        &:nth-child(6) {
+          background-color: lighten($secondary, 15%);
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        background-color: $primary;
+        max-width: 375px;
+        @include breakpoint(large) {
+          height: calc($photo_height_lrg + 116px);
+        }
+        .promo_text {
+          background-color: transparent;
+        }
+      }
+      a {
+        text-decoration: none;
+        font-weight: 300;
+      }
+      .photo {
+        width: 375px;
+        height: $photo_height;
+        background-size: cover;
+        background-position: center;
+        transition: filter 0.4s ease;
+        @include breakpoint(large) {
+          height: $photo_height_lrg;
+        }
+      }
+      .promo_text {
+        padding: 1.5rem;
+        background-color: $secondary;
+        color: $light;
+        transition: background-color 0.5s ease;
+        h3 {
+          color: $light;
+          text-transform: uppercase;
+          margin: 0.25rem;
+        }
+      }
+      .social-icons {
+        a {
+          display: block;
+          margin: 2rem 0;
+          font-size: 1.75rem;
+          color: $light;
+          &:hover {
+            color: darken($light, 25%);
+          }
+        }
+      }
+      &.top-row:hover {
+        .photo {
+          filter: grayscale(0.5);
+        }
+        .promo_text {
+          background-color: lighten($secondary, 6%);
+        }
+      }
+    }
+  }
+}

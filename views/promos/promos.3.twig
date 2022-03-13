@@ -1,0 +1,15 @@
+<section id="promos" aria-label="Promos">
+  <div id="promos-wrapper">
+    {% for promo in promos %}
+        <div class="promo-box">
+            <a class="promo-link" href="{{ promo.promo_link }}" {% if promo.promo_target %} target="_blank" {% endif %}>
+              <div class="photo" style="background-image: url({% if promo.custom_promo %} {{ Image(promo.custom_promo_image).src }} {% endif %});"></div>
+            <div class="promo_text">
+              {{ promo.promo_text }}
+            </div>
+          </a>
+        </div>
+    {% endfor %}
+    </div>
+  <div class="clear"></div>
+</section><!-- end #promos -->

@@ -1,0 +1,8 @@
+@use 'mixins' as *;
+@use 'globals' as *;
+
+#headerimage {
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+}

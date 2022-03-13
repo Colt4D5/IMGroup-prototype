@@ -1,0 +1,7 @@
+<div class="promo-box">
+  <a class="photo" href="{{ promo.promo_link }}" {% if promo.promo_target %} target="_blank" {% endif %} style="background-image: url({{ Image(promo.custom_promo_image).src }})">
+  </a>
+  <div class="promo_text">
+    <h3>{{ promo.promo_cta }}</h3>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+
+{# Desktop side menu #}
+<nav id="sidenav" class="show-for-large {{ menu_title }}-menu" aria-label="{{ menu_title }} Navigation">
+	<ul class="is_sidenav">
+	{% if menu_title == 'about' %}
+		{% for item in about_menu.get_items %}
+			<li class="{{ item.classes | join(' ') }}"><a href="{{ item.link }}" class="about-menu-item" target="{{ item.target }}">{{ item.title }}</a></li>
+		{% endfor %}
+	{% elseif menu_title == 'services' %}
+		{% for item in services_menu.get_items %}
+			<li class="{{ item.classes | join(' ') }}"><a href="{{ item.link }}" class="service-menu-item" target="{{ item.target }}">{{ item.title }}</a></li>
+		{% endfor %}
+	{% elseif menu_title == 'location' %}
+		{% for item in locations_menu.get_items %}
+			<li class="{{ item.classes | join(' ') }}"><a href="{{ item.link }}" class="location-menu-item" target="{{ item.target }}">{{ item.title }}</a></li>
+		{% endfor %}
+	{% elseif menu_title == 'aveda' %}
+		{% for item in aveda_menu.get_items %}
+			<li class="{{ item.classes | join(' ') }}"><a href="{{ item.link }}" class="location-menu-item" target="{{ item.target }}">{{ item.title }}</a></li>
+		{% endfor %}
+	{% endif %}
+	</ul>
+</nav>
+
+{# Mobile dropdown #}
+<div id="mobile-nav" class="opensub hide-for-large">{{ menu_title }}<i class="fa fa-angle-down" aria-hidden="true"></i></div>
+<nav id="mobile-subnav" class="hide-for-large" aria-label="{{ menu_title }} Mobile Navigation">
+	<ul class="is_mobile_subnav">
+		{% if menu_title == 'about' %}
+			{% for item in about_menu.get_items %}
+				<li class="{{ item.classes | join(' ') }}"><a href="{{ item.link }}" class="about-menu-item" target="{{ item.target }}">{{ item.title }}</a></li>
+			{% endfor %}
+		{% elseif menu_title == 'services' %}
+			{% for item in services_menu.get_items %}
+				<li class="{{ item.classes | join(' ') }}"><a href="{{ item.link }}" class="service-menu-item" target="{{ item.target }}">{{ item.title }}</a></li>
+			{% endfor %}
+		{% elseif menu_title == 'location' %}
+			{% for item in locations_menu.get_items %}
+				<li class="{{ item.classes | join(' ') }}"><a href="{{ item.link }}" class="location-menu-item" target="{{ item.target }}">{{ item.title }}</a></li>
+			{% endfor %}
+		{% elseif menu_title == 'aveda' %}
+			{% for item in aveda_menu.get_items %}
+				<li class="{{ item.classes | join(' ') }}"><a href="{{ item.link }}" class="location-menu-item" target="{{ item.target }}">{{ item.title }}</a></li>
+			{% endfor %}
+		{% endif %}
+	</ul>
+</nav>

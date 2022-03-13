@@ -1,0 +1,48 @@
+<section id="promos" aria-label="Promos">
+  <div id="promos-wrapper">
+
+    {% for promo in promos %}
+        <div class="promo-box top-row">
+            <a class="promo-link" href="{{ promo.promo_link }}" {% if promo.promo_target %} target="_blank" {% endif %}>
+              <div class="photo" style="background-image: url({% if promo.custom_promo %} {{ Image(promo.custom_promo_image).src }} {% endif %});"></div>
+            <div class="promo_text">
+              {{ promo.promo_text }}
+            </div>
+          </a>
+        </div>
+    {% endfor %}
+
+
+      <div class="promo-box bottom-row">
+          <div class="promo_text">
+            <h3>Blog Title</h3>
+            <p>viverra adipiscing at in tellus integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque...</p>
+          </div>
+      </div>
+
+
+      <div class="promo-box bottom-row show-for-medium-only">
+          <div class="promo_text">
+            <h3>Other Blog Title</h3>
+            <p>viverra adipiscing at in tellus integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque...</p>
+          </div>
+      </div>
+
+
+      <div class="promo-box bottom-row">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/krissysalon2" target="_blank" rel="noopener"><i class="fa fa-lg fa-facebook"> </i></a>  <a href="https://www.instagram.com/kljhairstudio/" target="_blank" rel="noopener"><i class="fa fa-lg fa-instagram"> </i></a>
+          </div>
+      </div>
+
+
+      <div class="promo-box bottom-row hide-for-medium-only">
+          <div class="promo_text">
+            <h3>Other Blog Title</h3>
+            <p>viverra adipiscing at in tellus integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque...</p>
+          </div>
+      </div>
+
+    </div>
+  <div class="clear"></div>
+</section><!-- end #promos -->

@@ -1,0 +1,21 @@
+{% set bg_img = promo.custom_promo_image %}
+{# {% if promo.custom_promo %} {{ Image(promo.custom_promo_image).src }} {% endif %} #}
+
+<section id="promos" aria-label="Promos">
+  <div id="promos-wrapper" class="row">
+    {% for promo in promos %}
+      {% if loop.index == 1 %}
+        <div class="grid-col medium-6 columns">
+          {% include 'components/promo-box.twig' %}
+        </div>
+      {% elseif loop.index == 2 %}
+        <div class="grid-col medium-6 columns">
+          {% include 'components/promo-box.twig' %}
+      {% elseif loop.index == 3 %}
+          {% include 'components/promo-box.twig' %}
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+  <div class="clear"></div>
+</section><!-- end #promos -->

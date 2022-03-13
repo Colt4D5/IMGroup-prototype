@@ -1,0 +1,106 @@
+@use '../mixins' as *;
+@use '../globals' as *;
+
+$mobile_promo_size: 250px;
+$promo_box_size: 175px;
+
+#promos {
+  // background-color: hsl(204, 38%, 82%);
+  #promos-wrapper {
+    max-width: $row-width;
+    margin: 0 auto;
+    padding: 3rem 0;
+    display: flex;
+    // gap: 1rem;
+    flex-direction: column;
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
+    .grid-col {
+      min-height: 250px;
+      @include breakpoint(large) {
+        min-height: 375px;
+      }
+      .promo-box {
+        text-align: center;
+        position: relative;
+        margin: 0.5rem;
+        a {
+          text-decoration: none;
+          font-weight: 300;
+        }
+        .photo {
+          overflow: hidden;
+          position: relative;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.2s ease;
+          width: 100%;
+          height: $mobile_promo_size;
+          display: block;
+          &:focus {
+            // transform: scale(1.1);
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            inset: 0.75rem;
+            background-color: transparent;
+            border: 1px solid $light;
+            transition: inset 0.4s ease;
+          }
+        }
+        .promo_text {
+          position: absolute;
+          bottom: 1rem;
+          left: 50%;
+          transform: translateX(-50%);
+          right: auto;
+          pointer-events: none;
+          h3 {
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            margin: 0;
+            font-weight: 300;
+            color: $light;
+            transition: color 0.4s ease;
+          }
+        }
+        &:nth-child(2) {
+          margin-top: 1rem;
+        }
+        &:hover{
+          .photo::after {
+            inset: 0.5rem;
+          }
+          h3 {
+            color: $secondary;
+          }
+        } 
+      }
+      @include breakpoint(medium) {
+        &:first-of-type {
+          .photo {
+            height: calc($promo_box_size + $promo_box_size + 16px);
+          }
+        }
+        &:last-of-type {
+          .photo {
+            height: $promo_box_size;
+          }
+          .promo_text {
+            transform: translate(0);
+          }
+          .promo-box:first-of-type .promo_text {
+            left: 2rem;
+          }
+          .promo-box:last-of-type .promo_text {
+            right: 2rem;
+            left: auto;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{% if menu %}
+	<ul>
+	{% for item in items %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a target="{{ item.target }}" href="{{ item.link }}" data-link >{{ item.title }}{% if item.get_children %}{{ icon }}{% endif %}</a>
+			
+            {% if item.get_children %}
+                <ul class="is_subnav">
+                    {% for child in item.get_children %}
+                        <li class="{{ child.class }}"><a href="{{ child.link }}" tabindex="-1">{{ child.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

@@ -1,0 +1,15 @@
+	<div id="morelinks">
+		<a href="#" role="button" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" role="button" title="Instagram"><i class="fa-brands fa-instagram
+		"></i></a><a href="#" id="morelinks-phone">555.555.5555</a>
+	</div>
+	<div id="top-bar">
+		<div class="inner">
+			<a href="/">
+				<img id="logo" src="/wp-content/uploads/2022/03/klj-logo_1.webp" alt="Logo | Some City, NA" width="125" height="112" />
+			</a>
+			<nav id="nav-main" class="show-for-large" role="navigation">
+				{% include "menu.twig" with {'items': menu.get_items} %}
+			</nav><!-- #nav -->
+			<div id="menuicon"><i class="fa-solid fa-bars"></i></div>
+		</div>
+	</div>

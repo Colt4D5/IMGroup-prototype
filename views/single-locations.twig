@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block header %}
+	{{ parent() }}
+	{% include 'components/headerimage.1.twig' %}
+{% endblock %}
+
+  {% if sidebar %}
+    {% block sidebar %}
+      {% include 'sidebar.twig' %}
+    {% endblock %}
+  {% endif %}
+
+
+  {% block content %}
+        {% include 'components/loop-location.twig' %}
+  {% endblock %}

@@ -1,0 +1,68 @@
+@use '../mixins' as *;
+@use '../globals' as *;
+
+#promos {
+  // background-color: hsl(204, 38%, 82%);
+  #promos-wrapper {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
+    .promo-box {
+      flex: 1;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      .photo {
+        width: 100%;
+        height: 325px;
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.2s ease;
+        @include breakpoint(xxlarge) {
+          height: 400px;
+        }
+        &:focus {
+          transform: scale(1.1);
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: $primary;
+          transition: $transition;
+          opacity: 0.4;
+        }
+      }
+      .promo_text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $light;
+        min-width: 75%;
+        h3 {
+          font-size: 2rem;
+          text-transform: uppercase;
+          margin: 0.5rem;
+          color: $light;
+          @include breakpoint(medium) {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+          }
+        }
+        a.button {
+          display: inline-block;
+          margin: 0.5rem 0;
+        }
+      }
+    }
+  }
+}

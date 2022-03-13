@@ -1,0 +1,11 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+	{{ parent() }}
+	{% include 'components/headerimage.1.twig' %}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ post.title }}</h1>
+  {{ post.content }}
+{% endblock %}

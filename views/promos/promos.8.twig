@@ -1,0 +1,42 @@
+{% set bg_img = promo.custom_promo_image %}
+{# {% if promo.custom_promo %} {{ Image(promo.custom_promo_image).src }} {% endif %} #}
+<section id="promos" aria-label="Promos">
+  <div id="promos-wrapper" class="row">
+
+    <div id="blog-wrapper" class="medium-4 columns">
+      <div class="inner">
+        <h3>Blog Title</h3>
+        <p>There’s a new color line on our shelves—and we’re obsessed. Introducing Aveda’s new and improved Full Spectrum Permanent Vegan Treatment Hair Color for color without limits.</p>
+        <a class="button" role="button">Read More</a>
+      </div>
+    </div>
+
+    {% for promo in promos %}
+      {% if loop.index == 1 %}
+        <div class="promo-box medium-4 columns">
+          <a class="photo" href="{{ promo.promo_link }}" {% if promo.promo_target %} target="_blank" {% endif %} style="background-image: url({{ Image(promo.custom_promo_image).src }})"></a>
+          <div class="promo_text">
+            {{ promo.promo_cta }}
+          </div>
+        </div>
+      {% elseif loop.index == 2 %}
+        <div id="promos-stack" class="medium-4 columns">
+          <div class="promo-box">
+            <a class="photo" href="{{ promo.promo_link }}" {% if promo.promo_target %} target="_blank" {% endif %} style="background-image: url({{ Image(promo.custom_promo_image).src }})"></a>
+            <div class="promo_text">
+              {{ promo.promo_cta }}
+            </div>
+          </div>
+      {% elseif loop.index == 3 %}
+          <div class="promo-box">
+            <a class="photo" href="{{ promo.promo_link }}" {% if promo.promo_target %} target="_blank" {% endif %} style="background-image: url({{ Image(promo.custom_promo_image).src }})"></a>
+            <div class="promo_text">
+              {{ promo.promo_cta }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+  {# <div class="clear"></div> #}
+</section><!-- end #promos -->

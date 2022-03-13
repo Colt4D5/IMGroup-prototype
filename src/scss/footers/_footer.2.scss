@@ -1,0 +1,40 @@
+@use '../mixins' as *;
+@use '../globals' as *;
+
+footer {
+  #footer-top {
+    #inner {
+      #footer-logo {
+        width: 100px;
+        margin: 0 auto 0.5rem;
+      }
+      background: url(/wp-content/uploads/2022/02/footer_bg_texture.png), $primary;
+      height: 450px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $light;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      text-align: center;
+      #foot1 {
+        font-weight: 300;
+        p {
+          margin: 0;
+        }
+      }
+      a {
+        color: $light;
+        font-weight: 300;
+        text-decoration: none;
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+  #footer-bottom {
+    text-align: center;
+    padding: 0.5rem;
+  }
+}

@@ -1,0 +1,84 @@
+@use '../mixins' as *;
+@use '../globals' as *;
+
+#promos {
+  background-color: hsl(204, 38%, 82%);
+  #promos-wrapper {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    .promo-box {
+      text-align: center;
+      position: relative;
+      .photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+      }
+      .promo_text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: $light;
+        width: 100%;
+        a.button {
+          display: block;
+          margin: 0;
+        }
+      }
+      &:hover {
+        a.promo-link {
+          background-color: lighten($primary, 15%);
+        }
+      }
+      &:nth-child(2), &:nth-child(3) {
+        .promo-link {
+          background-color: $secondary;
+          &:hover {
+            background-color: darken($secondary, 10%);
+          }
+        }
+      }
+    }
+  }
+  #promo-copy {
+    text-align: center;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .inner {
+      max-width: 650px;
+      margin: 0 auto;
+      h3 {
+        font-size: 2rem;
+        margin: 0 0 1rem;
+        text-decoration: underline;
+      }
+    }
+    @include breakpoint(medium) {
+      height: 50vw;
+      padding: 2rem;
+      .inner {
+        h3 {
+          font-size: clamp(1.25rem, 2.5vw, 2rem);
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    @include breakpoint(large) {
+      .inner {
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+@use 'mixins' as *;
+@use 'globals' as *;
+
+section#content {
+  &:not(.home) {
+    padding: 4rem 1rem;
+  }
+
+  // Mobile subnav
+  #mobile-nav {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: $primary;
+    color: $light;
+    text-transform: uppercase;
+    transition: $transition;
+    font-size: 1.4rem;
+    cursor: pointer;
+    i {
+      margin-left: 0.25rem;
+    }
+    &:hover {
+      background-color: lighten($primary, 5%);
+    }
+  }
+  #mobile-subnav {
+    width: 100%;
+    background-color: lighten($secondary, 10%);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease;
+    margin-bottom: 2rem;
+    ul.is_mobile_subnav {
+      padding: 0;
+      margin: 1rem 0;
+      li {
+        a {
+          text-align: center;
+          font-size: 1.25rem;
+          text-decoration: none;
+          padding: 0.25em;
+          color: $light;
+          display: block;
+          position: relative;
+          &:hover {
+            color: darken($light, 20%);
+          }
+        }
+        // &.current_page_item > a, 
+        &.current-menu-item > a {
+          color: $primary;
+          font-weight: 500;
+          position: relative;
+          &::before {
+            content: '';
+            background-image: url("/wp-content/uploads/2022/03/scissors.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 32px;
+            height: 24px;
+            left: 25%;
+            margin-right: 0.5rem;
+          }
+          &:hover {
+            color: darken($secondary, 10%);
+          }
+        }
+        &:not(:last-child) > a::after {
+          content: '';
+          width: 80%;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 2px;
+          background-color: lighten($secondary, 15%);
+        }
+      }
+    }
+  }
+
+  // Sidebar, duh
+  #sidebar {
+    #sidenav {
+      padding: 3rem 6rem 3rem 0;
+      ul.is_sidenav {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-size: 1.5rem;
+        padding: 2rem 0;
+        border-right: 2px solid $primary;
+        text-align: right;
+        li {
+          a {
+            display: inline-block;
+            padding: 0.5rem 2rem 0.5rem 0;
+            font-weight: 100;
+          }
+          &.current_page_item a, &.current-menu-item a {
+            font-weight: 300;
+            &::before {
+              content: '';
+              background-image: url("/wp-content/uploads/2022/03/scissors.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              display: inline-block;
+              width: 32px;
+              height: 24px;
+              transform: translateY(5px);
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+body.error404 {
+  section#content {
+    .wrapper {
+      // position: relative;
+      #tumbleweed {
+        position: absolute;
+        left: -200px;
+        bottom: 24rem;
+        animation: tumble 4s infinite linear;
+        max-width: 200px;
+      }
+    }
+  }
+}
+
+@keyframes tumble {
+  from {
+    left: -200px;
+    transform: rotate(0deg);
+  }
+  to {
+    left: 100%;
+    transform: rotate(720deg);
+  }
+}

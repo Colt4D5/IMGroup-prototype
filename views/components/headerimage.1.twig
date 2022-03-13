@@ -1,0 +1,7 @@
+{% set bg_img = Image(post.page_title_image).src %}
+
+{% if bg_img %}
+  <div id="headerimage" style="background-image: url({{ bg_img }})"></div>
+{% else %}
+  <div id="headerimage" style="background-image: url(https://imaginalhosting.com/wp-themes/images/img/aveda/behindthescenes/001.jpg)"></div>
+{% endif %}

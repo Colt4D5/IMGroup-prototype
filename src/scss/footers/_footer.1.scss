@@ -1,0 +1,34 @@
+@use '../mixins' as *;
+@use '../globals' as *;
+
+footer {
+  #footer-top {
+    #footer-top-left {
+      background-color: $primary;
+      height: 450px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $light;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      a {
+        color: $light;
+        font-weight: 300;
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+    #footer-top-right {
+      padding: 0;
+    }
+  }
+  #footer-bottom {
+    text-align: center;
+    padding: 0.5rem;
+    a:focus {
+      outline: 3px solid $secondary;
+    }
+  }
+}

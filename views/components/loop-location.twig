@@ -1,0 +1,76 @@
+<article id="post-{{ post.id }}" role="article" itemscope itemtype="http://schema.org/Organization">
+
+	<div style="display: none;" itemprop="salonName">{{ site.name }}</div>
+
+	<section class="entry-content" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" aria-labelledby="location-title">
+		<div itemprop="locationName"><h1 id="location-title" class="page-title">{{ post.title }}</h1></div>
+		<div class="row">
+			<div class="medium-6 columns">
+				<h3>Visit Us</h3>
+				<p>
+					{# <span itemprop="streetAddress"><?php the_field('location_address'); ?></span><br/> #}
+					<span itemprop="streetAddress">{{ post.location_address }}</span><br/>
+					<span itemprop="addressLocality">{{ post.location_city }}</span>,
+					<span itemprop="addressRegion">{{ post.location_state }}</span>
+					<span itemprop="postalCode">{{ post.location_zip }}</span>
+				</p>
+				<div itemprop="telephone">
+					<a href="tel:+1{{ phone_number }}">{{ post.location_phone }}</a>
+				</div>
+				{% if post.location_email %}
+					<div class="location_email">
+						<a href="mailto:{{ post.location_email }}">{{ post.location_email }}</a>
+					</div>
+				{% endif %}
+				{% if post.location_social %}
+					<div class="location_social">
+						<br/><p>{{ post.location_social }}</p>
+					</div>
+				{% endif %}
+			</div>
+			<div class="medium-6 columns">
+				<div class="hours">
+					<h3>Hours</h3>
+					{{ post.location_hours }}
+				</div>
+			</div>
+		</div>
+
+		{% if post.location_booking %}
+				<br/><a class="button" href="{{ post.location_booking }}">Book Now</a>
+		{% endif %}
+
+		{% if post.location_directions %}
+				<br/><a class="button" href="{{ post.location_directions }}">Directions</a>
+		{% endif %}
+	</section> <!-- end article section -->
+
+
+	{{ post.location_map }}
+
+	{{ post.content }}
+
+	{# {% if function(have_rows('location_gallery')) %}
+	<div class="location_gallery gallery_holder row small-up-2 medium-up-2 large-up-3 collapse" data-featherlight-gallery data-featherlight-filter="a"> #}
+
+	{# <?php while( have_rows('location_gallery') ): the_row(); #}
+
+			{# // vars
+			$image = get_sub_field('location_image');
+
+			?>
+
+			<div class="column">
+					<a href="<?php echo $image['url']; ?>">
+							<img src="<?php bloginfo('template_url'); ?>/assets/images/location_blank.gif" alt="<?php echo $image['alt'] ?>" border="0" />
+							<span class="gallery_image" style="background-image:url(<?php echo $image['url']; ?>);"></span>
+					</a>
+			</div>
+
+		<?php endwhile; ?>
+
+		</div>
+
+	<?php endif; ?> #}
+
+</article> <!-- end article -->
