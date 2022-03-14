@@ -3,11 +3,13 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite build --watch & browser-sync start --proxy 'imgroup-theme.local' --files 'src/scss/**/*.scss'",
     "build": "vite build",
-    "preview": "vite preview"
+    "watch": "vite build --watch",
+    "sync": "browser-sync start --proxy 'imgroup-theme.local' --files 'src/scss/**/*.scss'"
   },
   "devDependencies": {
+    "browser-sync": "^2.27.8",
     "sass": "^1.49.9",
     "vite": "^2.8.0"
   },

@@ -1,0 +1,48 @@
+{# set set promo variables #}
+{% set promo1 = '' %}{% set promo2 = '' %}{% set promo3 = '' %}
+{% for promo in promos %}
+  {% if loop.index == 1 %}
+    {% set promo1 = promo %}
+  {% elseif loop.index == 2 %}
+    {% set promo2 = promo %}
+  {% elseif loop.index == 3 %}
+    {% set promo3 = promo %}
+  {% endif %}
+{% endfor %}
+
+<section id="promos" class="{{ promo1.promo_cta }}" aria-label="Promos">
+  <div id="promos-wrapper">
+
+    <div class="grid-item one"></div>
+
+    <div class="promo-box grid-item two">
+      <a class="photo" href="{{ promo1.promo_link }}" {% if promo1.promo_target %} target="_blank" {% endif %} style="background-image: url({{ Image(promo1.custom_promo_image).src }})"></a>
+      <div class="promo_text">
+        {{ promo1.promo_cta }}
+      </div>
+    </div>
+
+    <div class="grid-item three social">
+      <a href="https://www.facebook.com/krissysalon2" target="_blank" role="button" title="Facebook"><i class="fa fa-lg fa-facebook"></i></a><a href="https://www.instagram.com/kljhairstudio/" target="_blank" role="button" title="Instagram"><i class="fa fa-lg fa-instagram"></i></a>
+    </div>
+
+    <div class="grid-item four blog"></div>
+
+    <div class="promo-box grid-item five">
+      <a class="photo" href="{{ promo2.promo_link }}" {% if promo2.promo_target %} target="_blank" {% endif %} style="background-image: url({{ Image(promo2.custom_promo_image).src }})"></a>
+      <div class="promo_text">
+        {{ promo2.promo_cta }}
+      </div>
+    </div>
+
+    <div class="grid-item six"></div>
+
+    <div class="promo-box grid-item seven">
+      <a class="photo" href="{{ promo3.promo_link }}" {% if promo3.promo_target %} target="_blank" {% endif %} style="background-image: url({{ Image(promo3.custom_promo_image).src }})"></a>
+      <div class="promo_text">
+        {{ promo3.promo_cta }}
+      </div>
+    </div>
+
+    </div>
+</section><!-- end #promos -->

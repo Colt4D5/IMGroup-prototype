@@ -1,13 +1,12 @@
-// const endpoint = 'http://imgroup-theme.local/wp-json/wp/v2/people';
 const endpoint = '/wp-json/wp/v2/people';
 	
 const team = [];
 const teamCont = document.querySelector('#team');
 const searchCont = document.querySelector('#search-wrapper')
-const searchbar = searchCont.querySelector('#search');
+const searchbar = document.querySelector('#search');
 if (searchbar) searchbar.value = '';
 
-if (search) search.addEventListener('input', updateSearch);
+if (searchbar) searchbar.addEventListener('input', updateSearch);
 
 if (teamCont) teamCont.addEventListener('click', handleClick);
 
