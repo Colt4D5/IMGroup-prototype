@@ -1,43 +1,68 @@
 @use '../_mixins' as *;
 @use '../_globals' as *;
 
-header {
+// STILL GOTTA MAKE THIS STICKY 
 
+header {
+  position: relative;
+  #logo{
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 125px;
+    z-index: 6;
+    @include breakpoint(large) {
+      max-width: 200px;
+      top: 5rem;
+      left: 5vw;
+      transform: translateX(0);
+    }
+  }
   #top-bar {
     background-color: var(--primary);
     width: 100%;
     z-index: 4;
+    position: sticky;
+    @include breakpoint(large) {
+      position: absolute;
+      bottom: 0;
+    }
     .inner {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 2rem 4rem;
+      padding: 0;
       margin: 0 auto;
       position: relative;
+      height: 140px;
+      text-align: right;
       @include breakpoint(large) {
         justify-content: space-between;
-      }
-      #logo{
-        max-width: 125px;
+        height: auto;
       }
       nav {
         display:none;
         @include breakpoint(large) {
           display: flex;
+          justify-content: flex-end;
         }
         ul {
           list-style: none;
           display: flex;
           justify-content: flex-end;
           align-items: center;
+          margin: 0;
           li {
             position: relative;
             a {
-              font-size: 1.25rem;
+              font-size: 1rem;
               padding: 0.7rem 0.5rem;
               color: $light;
               text-decoration: none;
               font-weight: 200;
+              padding: 1rem 0.5em;
+              display: inline-block;
               &:hover {
                 color: $secondary;
               }
@@ -45,6 +70,8 @@ header {
             &.cta > a {
               background-color: $light;
               color: $dark;
+              margin-left: 0.75rem;
+              padding: 0.5rem 0.75em;
             }
             &.cta:hover > a {
               background-color: darken($light, 15%);
@@ -54,7 +81,7 @@ header {
               transition: opacity 0.2s ease;
               opacity: 0;
               padding: 0.5rem;
-              top: 100%;
+              bottom: 100%;
               left: 0;
               align-items: flex-start;
               pointer-events: none;
@@ -71,9 +98,29 @@ header {
                 a {
                   text-transform: none;
                   white-space: nowrap;
-                  padding: 0.25em;
+                  margin: 0;
+                  padding: 0.25rem 0.5rem;
                 }
               }
+          }
+        }
+      }
+
+      #morelinks {
+        padding-right: 9rem;
+        display: none;
+        @include breakpoint(large) {
+          display: block;
+        }
+        a {
+          color: var(--light);
+          text-decoration: none;
+          margin-left: 0.5rem;
+          &:hover {
+            color: var(--secondary);
+          }
+          &.phone {
+            font-weight: 100;
           }
         }
       }
@@ -100,6 +147,7 @@ header {
   }
 
   #headerimage, #mobile-headerimage {
+    border-bottom: 3rem solid var(--primary);
     .swiper-slide {
       position: relative;
       background-size: cover;

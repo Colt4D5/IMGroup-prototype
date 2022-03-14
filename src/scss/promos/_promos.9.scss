@@ -38,14 +38,8 @@
       justify-content: center;
       align-items: center;
       background-size: cover;
-      height: 250px;
-
+      height: 350px;
       margin-bottom: 1rem;
-
-      @include breakpoint(medium) {
-        height: auto;
-        margin: 0;
-      }
       &.social {
         a {
           padding: 0.5rem;
@@ -61,6 +55,8 @@
       &.one {
         grid-area: one;
         background-image: url(https://breezesalon.com/wp-content/themes/Imaginal-Child-09/assets/images/promo-about.jpg); 
+        height: 575px;
+        background-position: center;
       }
       &.two {
         grid-area: two;
@@ -68,10 +64,12 @@
       &.three {
         grid-area: three;
         background-image: url(https://breezesalon.com/wp-content/themes/Imaginal-Child-09/assets/images/promo-social.jpg);
+        height: 450px;
       }
       &.four {
         grid-area: four;
         background-image: url(https://breezesalon.com/wp-content/themes/Imaginal-Child-09/assets/images/promo-blog.jpg);
+        height: 575px;
       }
       &.five {
         grid-area: five;
@@ -79,10 +77,18 @@
       &.six {
         grid-area: six;
         background-image: url(https://breezesalon.com/wp-content/uploads/2018/07/1656-static-promo-2.jpg);
+        height: 700px;
         filter: hue-rotate(100deg);
+        opacity: 0.7;
       }
       &.seven {
         grid-area: seven;
+      }
+      @include breakpoint(medium) {
+        &:is(.one, .two, .three, .four, .five, .six, .seven) {
+          height: auto;
+          margin: 0;
+        }
       }
     }
     .promo-box {

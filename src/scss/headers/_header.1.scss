@@ -4,13 +4,20 @@
 header {
 
   #top-bar {
-    background-color: var(--primary);
+    background-color: transparent;
+    background: linear-gradient(180deg, rgb(0 0 0 / 0.75), rgb(0 0 0 / 0));
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 4;
+    @include breakpoint(large) {
+      background: linear-gradient(180deg, rgb(0 0 0 / 0.5), rgb(0 0 0 / 0));
+    }
     .inner {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       padding: 2rem 4rem;
       margin: 0 auto;
       position: relative;
@@ -100,6 +107,7 @@ header {
   }
 
   #headerimage, #mobile-headerimage {
+    border-bottom: 2.5rem solid $primary;
     .swiper-slide {
       position: relative;
       background-size: cover;

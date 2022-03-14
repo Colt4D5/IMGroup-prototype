@@ -45,6 +45,15 @@
           }
         }
       }
+      &.is_open {
+          & > a {
+            font-weight: 500;
+            i {
+              transform: rotate(180deg);
+            }
+          }
+    }
+
     }
     &.is_subnav {
       // max-height: 0;

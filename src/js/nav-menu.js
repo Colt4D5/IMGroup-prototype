@@ -65,6 +65,7 @@ function initMobileSubnav() {
         subnav.style.maxHeight = `${subnav.dataset.height}px`;
       } else {
         subnav.style.maxHeight = `0`;
+        // subnav.closest('li').classList.remove('is_open');
       }
     })
   })

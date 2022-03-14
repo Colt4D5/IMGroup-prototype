@@ -4,13 +4,20 @@
 header {
 
   #top-bar {
-    background-color: var(--primary);
+    background-color: transparent;
+    background: linear-gradient(180deg, rgb(0 0 0 / 0.75), rgb(0 0 0 / 0));
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 4;
+    @include breakpoint(large) {
+      background: linear-gradient(180deg, rgb(0 0 0 / 0.5), rgb(0 0 0 / 0));
+    }
     .inner {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       padding: 2rem 4rem;
       margin: 0 auto;
       position: relative;
@@ -20,60 +27,77 @@ header {
       #logo{
         max-width: 125px;
       }
-      nav {
-        display:none;
-        @include breakpoint(large) {
-          display: flex;
-        }
-        ul {
-          list-style: none;
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          li {
-            position: relative;
-            a {
-              font-size: 1.25rem;
-              padding: 0.7rem 0.5rem;
-              color: $light;
-              text-decoration: none;
-              font-weight: 200;
-              &:hover {
-                color: $secondary;
-              }
-            }
-            &.cta > a {
-              background-color: $light;
-              color: $dark;
-            }
-            &.cta:hover > a {
-              background-color: darken($light, 15%);
-            }
-            ul.is_subnav {
-              position: absolute;
-              transition: opacity 0.2s ease;
-              opacity: 0;
-              padding: 0.5rem;
-              top: 100%;
-              left: 0;
-              align-items: flex-start;
-              pointer-events: none;
-              transition-delay: 0.3s;
-              flex-direction: column;
-              background-color: rgba(94, 131, 156, 0.6);
-              z-index: 3;
-              &.is_open {
-                opacity: 1;
-                pointer-events: auto;
-                transition-delay: 0s;
-                
-              }
-                a {
-                  text-transform: none;
-                  white-space: nowrap;
-                  padding: 0.25em;
+      #nav-wrapper {
+        nav {
+          display:none;
+          @include breakpoint(large) {
+            display: flex;
+          }
+          ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            li {
+              position: relative;
+              a {
+                font-size: 1.25rem;
+                padding: 0.7rem 0.5rem;
+                color: $light;
+                text-decoration: none;
+                font-weight: 200;
+                &:hover {
+                  color: $secondary;
                 }
               }
+              &.cta > a {
+                background-color: $light;
+                color: $dark;
+              }
+              &.cta:hover > a {
+                background-color: darken($light, 15%);
+              }
+              ul.is_subnav {
+                position: absolute;
+                transition: opacity 0.2s ease;
+                opacity: 0;
+                padding: 0.5rem;
+                top: 100%;
+                left: 0;
+                align-items: flex-start;
+                pointer-events: none;
+                transition-delay: 0.3s;
+                flex-direction: column;
+                background-color: rgba(94, 131, 156, 0.6);
+                z-index: 3;
+                &.is_open {
+                  opacity: 1;
+                  pointer-events: auto;
+                  transition-delay: 0s;
+                  
+                }
+                  a {
+                    text-transform: none;
+                    white-space: nowrap;
+                    padding: 0.25em;
+                  }
+                }
+            }
+          }
+        }
+
+        #morelinks {
+          text-align: right;
+          a {
+            color: var(--light);
+            text-decoration: none;
+            margin-left: 0.75rem;
+            &.phone {
+              font-weight: 100;
+            }
+            &:hover {
+              color: var(--secondary);
+            }
           }
         }
       }

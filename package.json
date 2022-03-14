@@ -3,10 +3,10 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite build --watch & browser-sync start --proxy 'imgroup-theme.local' --files 'src/scss/**/*.scss'",
+    "dev": "vite build --watch & browser-sync start --proxy 'imgroup-theme.local' --files '[src/scss/**/*.scss, src/js/**/*.js]'",
     "build": "vite build",
     "watch": "vite build --watch",
-    "sync": "browser-sync start --proxy 'imgroup-theme.local' --files 'src/scss/**/*.scss'"
+    "sync": "browser-sync start --proxy 'imgroup-theme.local' --files '[src/scss/**/*.scss, src/js/**/*.js]'"
   },
   "devDependencies": {
     "browser-sync": "^2.27.8",
