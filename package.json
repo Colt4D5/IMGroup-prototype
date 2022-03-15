@@ -3,15 +3,15 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite build --watch & browser-sync start --proxy 'imgroup-theme.local' --files '[src/scss/**/*.scss, src/js/**/*.js]'",
-    "build": "vite build",
-    "watch": "vite build --watch",
+    "start": "sass --watch assets/scss:assets/css --style=compressed & npx postcss assets/css/**/*.css --use autoprefixer -d assets/css -w",
     "sync": "browser-sync start --proxy 'imgroup-theme.local' --files '[src/scss/**/*.scss, src/js/**/*.js]'"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.2",
     "browser-sync": "^2.27.8",
-    "sass": "^1.49.9",
-    "vite": "^2.8.0"
+    "postcss": "^8.4.8",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.9"
   },
   "dependencies": {
     "swiper": "^8.0.7"
