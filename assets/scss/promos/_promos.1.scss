@@ -43,7 +43,7 @@
         height: 200px;
         border-radius: 50%;
         overflow: hidden;
-        border: 5px solid $primary;
+        border: 5px solid var(--primary);
         position: relative;
         margin-bottom: 1rem;
         background-size: cover;
@@ -72,7 +72,7 @@
           opacity: 0.2;
         }
         &:hover::after {
-          background-color: $primary;
+          background-color: var(--primary);
         }
         &:hover {
           transform: scale(1.05);
@@ -81,7 +81,7 @@
       h3 {
         text-transform: uppercase;
         margin: 0.5rem;
-        color: $primary;
+        color: var(--primary);
       }
     }
   }

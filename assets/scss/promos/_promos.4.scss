@@ -37,7 +37,7 @@
           height: 100%;
           top: 0;
           left: 0;
-          background-color: $primary;
+          background-color: var(--primary);
           transition: $transition;
           opacity: 0.4;
         }
@@ -47,13 +47,13 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: $light;
+        color: var(--light);
         min-width: 75%;
         h3 {
           font-size: 2rem;
           text-transform: uppercase;
           margin: 0.5rem;
-          color: $light;
+          color: var(--light);
           @include breakpoint(medium) {
             font-size: clamp(1.25rem, 3vw, 2rem);
           }

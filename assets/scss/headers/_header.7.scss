@@ -58,18 +58,18 @@ header {
             a {
               font-size: 1rem;
               padding: 0.7rem 0.5rem;
-              color: $light;
+              color: var(--light);
               text-decoration: none;
               font-weight: 200;
               padding: 1rem 0.5em;
               display: inline-block;
               &:hover {
-                color: $secondary;
+                color: var(--secondary);
               }
             }
             &.cta > a {
-              background-color: $light;
-              color: $dark;
+              background-color: var(--light);
+              color: var(--dark);
               margin-left: 0.75rem;
               padding: 0.5rem 0.75em;
             }

@@ -161,8 +161,6 @@ class StarterSite extends Timber\Site {
 new StarterSite();
 
 
-
-
 // register menus
 function register_theme_menus () {
 	register_nav_menus( [
@@ -177,54 +175,9 @@ function register_theme_menus () {
 add_action( 'init', 'register_theme_menus' );
 
 
-
-// enqueue site stylesheet
-// add_action( 'wp_enqueue_scripts', 'my_site_css' );
-// function my_site_css() {
-//     wp_register_style( 'my-css', get_template_directory_uri() . '/assets/css/style.min.css' );
-
-//     wp_enqueue_style( 'my-css' );
-// }
-
-// TODO: MINIFY ALL JS AND ENQUEUE SINGLE FILE
-// add_action( 'wp_enqueue_scripts', 'responsive_headers' );
-// function responsive_headers() {
-//     wp_register_script( 'headers', get_template_directory_uri() . '/assets/js/headers.js', [], '1.0.0', true );
-//     wp_enqueue_script( 'headers' );
-// }
-
-// add_action( 'wp_enqueue_scripts', 'my_site_js' );
-// function my_site_js() {
-//     wp_register_script( 'my-js', get_template_directory_uri() . '/static/site.js', [], '1.0.0', true );
-//     wp_enqueue_script( 'my-js' );
-// }
-
-// add_action( 'wp_enqueue_scripts', 'enqueue_swiper_js' );
-// function enqueue_swiper_js() {
-//     wp_register_script( 'swiper', get_template_directory_uri() . '/assets/js/swiper.js', [], '1.0.0', true );
-
-//     wp_enqueue_script( 'swiper' );
-// }
-
-// add_action( 'wp_enqueue_scripts', 'enqueue_nav_menu_js' );
-// function enqueue_nav_menu_js() {
-//     wp_register_script( 'nav_menu', get_template_directory_uri() . '/assets/js/nav-menu.js', [], '1.0.0', true );
-
-//     wp_enqueue_script( 'nav_menu' );
-// }
-
-// ENQUEUE CURSOR JS
-// add_action( 'wp_enqueue_scripts', 'enqueue_cursor_js' );
-// function enqueue_cursor_js() {
-//     wp_register_script( 'cursor', get_template_directory_uri() . '/assets/js/cursor.js', [], '1.0.0', true );
-
-//     wp_enqueue_script( 'cursor' );
-// }
-
-
-
+// enqueue all css files in assets/css folder
 function add_custom_assets() {
-  foreach( glob( get_template_directory(). '/dist/assets/*.css' ) as $file ) {
+  foreach( glob( get_template_directory(). '/assets/css/*.css' ) as $file ) {
     $file = str_replace(get_template_directory(), '', $file);
     // $file contains the name and extension of the file
     wp_register_style( $file.'style', get_template_directory_uri() . $file, array(), false, 'all' );
@@ -232,8 +185,8 @@ function add_custom_assets() {
   }
 
 
-
-  foreach( glob( get_template_directory(). '/dist/assets/*.js' ) as $file ) {
+// enqueue all js files in assets/js folder
+  foreach( glob( get_template_directory(). '/assets/js/*.js' ) as $file ) {
   $file = str_replace(get_template_directory(), '', $file);
   // $file contains the name and extension of the file
   wp_register_script( $file . 'script', get_template_directory_uri() . $file, [],'1.0.0', true);
@@ -259,10 +212,8 @@ add_filter( 'wp_theme_editor_filetypes', 'add_custom_editor_file_types' );
 // require_once(get_stylesheet_directory() . '/assets/functions/salon_test.php');
 
 
-/**
- * Register our sidebars and widgetized areas.
- *
- */
+
+// Register our sidebars and widgetized areas.
 function arphabet_widgets_init() {
 
 	register_sidebar( array(

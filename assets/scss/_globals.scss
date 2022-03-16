@@ -2,7 +2,9 @@
 
 
 :root {
+  --primary-lgt: hsl(199, 100%, 15%);
   --primary: hsl(199, 100%, 15%);
+  --primary-drk: hsl(199, 100%, 15%);
   --secondary: hsl(204, 25%, 49%);
   --tertiary: hsl(0, 0%, 0%); //Not currently in use
   --light: hsl(0, 0%, 100%);
@@ -34,7 +36,7 @@ body {
 }
 
 h1, h2, h3 {
-  color: $primary;
+  color: var(--primary);
   text-transform: uppercase;
 
 }
@@ -54,10 +56,10 @@ h3 {
 
 a {
   font-weight: 500;
-  color: $dark;
+  color: var(--dark);
   transition: $transition;
   &:hover {
-    color: $secondary;
+    color: var(--secondary);
   }
 }
 
@@ -66,7 +68,7 @@ a {
 body.accessibility-enabled a:focus {
   outline: none;
   @include breakpoint(large) {
-    outline: 3px solid $light
+    outline: 3px solid var(--light);
   }
 }
 
@@ -94,15 +96,15 @@ body.accessibility-enabled a:focus {
 }
 
 a.button {
-  background-color: $primary;
+  background-color: var(--primary);
   padding: 0.75rem 1.5rem;
-  color: $light;
+  color: var(--light);
   display: inline-block;
   text-transform: uppercase;
   font-size: 1.1rem;
   text-decoration: none;
   &:hover {
-    background-color: $secondary;
+    background-color: var(--secondary);
   }
 }
 

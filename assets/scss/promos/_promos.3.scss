@@ -75,11 +75,11 @@
       }
       .promo_text {
         padding: 1.5rem;
-        background-color: $primary;
-        color: $light;
+        background-color: var(--primary);
+        color: var(--light);
         transition: background-color 0.5s ease;
         h3 {
-          color: $light;
+          color: var(--light);
           text-transform: uppercase;
           margin: 0.25rem;
         }

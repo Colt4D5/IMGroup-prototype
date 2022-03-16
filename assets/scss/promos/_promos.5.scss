@@ -46,7 +46,7 @@ $promo_box_size: 175px;
             position: absolute;
             inset: 0.75rem;
             background-color: transparent;
-            border: 1px solid $light;
+            border: 1px solid var(--light);
             transition: inset 0.4s ease;
           }
         }
@@ -63,7 +63,7 @@ $promo_box_size: 175px;
             letter-spacing: 3px;
             margin: 0;
             font-weight: 300;
-            color: $light;
+            color: var(--light);
             transition: color 0.4s ease;
           }
         }
@@ -75,7 +75,7 @@ $promo_box_size: 175px;
             inset: 0.5rem;
           }
           h3 {
-            color: $secondary;
+            color: var(--secondary);
           }
         } 
       }

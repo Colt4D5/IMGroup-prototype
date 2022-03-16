@@ -4,19 +4,19 @@
 footer {
   #footer-top {
     #footer-top-left {
-      background-color: $primary;
+      background-color: var(--primary);
       height: 450px;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: $light;
+      color: var(--light);
       font-size: 1.15rem;
       line-height: 1.6;
       a {
-        color: $light;
+        color: var(--light);
         font-weight: 300;
         &:hover {
-          color: $secondary;
+          color: var(--secondary);
         }
       }
     }
@@ -28,7 +28,7 @@ footer {
     text-align: center;
     padding: 0.5rem;
     a:focus {
-      outline: 3px solid $secondary;
+      outline: 3px solid var(--secondary);
     }
   }
 }

@@ -13,7 +13,7 @@ header {
       display: inline-block;
       text-decoration: none;
       &:hover {
-        color: darken(#fff, 20%);
+        color: darken($light, 20%);
       }
       &#morelinks-phone {
         transform: translateY(-2px);
@@ -49,7 +49,7 @@ header {
           li {
             position: relative;
             a {
-              color: $light;
+              color: var(--light);
               text-decoration: none;
               transition: $transition;
               padding: 0.5em;
@@ -60,7 +60,7 @@ header {
               }
             }
             &.cta > a {
-              background-color: $light;
+              background-color: var(--light);
               padding: 1rem 1.5rem;
               color: $dark;
             }

@@ -8,12 +8,12 @@ footer {
         width: 100px;
         margin: 0 auto 0.5rem;
       }
-      background: url(/wp-content/uploads/2022/02/footer_bg_texture.png), $primary;
+      background: url(/wp-content/uploads/2022/02/footer_bg_texture.png), var(--primary);
       height: 450px;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: $light;
+      color: var(--light);
       font-size: 1.15rem;
       line-height: 1.6;
       text-align: center;
@@ -24,11 +24,11 @@ footer {
         }
       }
       a {
-        color: $light;
+        color: var(--light);
         font-weight: 300;
         text-decoration: none;
         &:hover {
-          color: $secondary;
+          color: var(--secondary);
         }
       }
     }

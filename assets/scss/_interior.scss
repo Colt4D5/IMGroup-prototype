@@ -11,8 +11,8 @@ section#content {
     width: 100%;
     padding: 1rem;
     text-align: center;
-    background-color: $primary;
-    color: $light;
+    background-color: var(--primary);
+    color: var(--light);
     text-transform: uppercase;
     transition: $transition;
     font-size: 1.4rem;
@@ -44,7 +44,7 @@ section#content {
           font-size: 1.25rem;
           text-decoration: none;
           padding: 0.25em;
-          color: $light;
+          color: var(--light);
           display: block;
           position: relative;
           &:hover {
@@ -53,7 +53,7 @@ section#content {
         }
         // &.current_page_item > a, 
         &.current-menu-item > a {
-          color: $primary;
+          color: var(--primary);
           font-weight: 500;
           position: relative;
           &::before {
@@ -96,7 +96,7 @@ section#content {
         align-items: flex-end;
         font-size: 1.5rem;
         padding: 2rem 0;
-        border-right: 2px solid $primary;
+        border-right: 2px solid var(--primary);
         text-align: right;
         li {
           a {

@@ -42,16 +42,16 @@ header {
             a {
               font-size: 1.25rem;
               padding: 0.7rem 0.5rem;
-              color: $light;
+              color: var(--light);
               text-decoration: none;
               font-weight: 200;
               &:hover {
-                color: $secondary;
+                color: var(--secondary);
               }
             }
             &.cta > a {
-              background-color: $light;
-              color: $dark;
+              background-color: var(--light);
+              color: var(--dark);
             }
             &.cta:hover > a {
               background-color: darken($light, 15%);
@@ -107,7 +107,7 @@ header {
   }
 
   #headerimage, #mobile-headerimage {
-    border-bottom: 2.5rem solid $primary;
+    border-bottom: 2.5rem solid var(--primary);
     .swiper-slide {
       position: relative;
       background-size: cover;

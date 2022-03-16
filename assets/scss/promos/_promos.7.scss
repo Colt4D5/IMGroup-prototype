@@ -24,7 +24,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        color: $light;
+        color: var(--light);
         width: 100%;
         a.button {
           display: block;
@@ -38,7 +38,7 @@
       }
       &:nth-child(2), &:nth-child(3) {
         .promo-link {
-          background-color: $secondary;
+          background-color: var(--secondary);
           &:hover {
             background-color: darken($secondary, 10%);
           }

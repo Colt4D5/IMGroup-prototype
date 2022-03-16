@@ -62,7 +62,7 @@ $photo_height_lrg: 450px;
         justify-content: center;
         align-items: center;
         padding: 2rem;
-        background-color: $primary;
+        background-color: var(--primary);
         max-width: 375px;
         @include breakpoint(large) {
           height: calc($photo_height_lrg + 116px);
@@ -87,11 +87,11 @@ $photo_height_lrg: 450px;
       }
       .promo_text {
         padding: 1.5rem;
-        background-color: $secondary;
-        color: $light;
+        background-color: var(--secondary);
+        color: var(--light);
         transition: background-color 0.5s ease;
         h3 {
-          color: $light;
+          color: var(--light);
           text-transform: uppercase;
           margin: 0.25rem;
         }
@@ -101,7 +101,7 @@ $photo_height_lrg: 450px;
           display: block;
           margin: 2rem 0;
           font-size: 1.75rem;
-          color: $light;
+          color: var(--light);
           &:hover {
             color: darken($light, 25%);
           }

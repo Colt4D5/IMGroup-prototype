@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "start": "sass --watch assets/scss:assets/css --style=compressed & npx postcss assets/css/**/*.css --use autoprefixer -d assets/css -w",
-    "sync": "browser-sync start --proxy 'imgroup-theme.local' --files '[src/scss/**/*.scss, src/js/**/*.js]'"
+    "sync": "browser-sync start --proxy 'imgroup-theme.local' --files '[assets/css/**/*.css, assets/js/**/*.js]'",
+    "start": "sass --watch assets/scss:assets/css --style=compressed & npx postcss assets/css/**/*.css --use autoprefixer -d assets/css -w & browser-sync start --proxy 'imgroup-theme.local' --files 'assets/css/**/*.css'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

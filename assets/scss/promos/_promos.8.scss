@@ -5,7 +5,7 @@ $promo_height: 260px;
 $promo_height_lg: 200px;
 
 #promos {
-  background-color: $secondary;
+  background-color: var(--secondary);
   z-index: 9999999;
   position: relative;
   @include breakpoint(medium) {
@@ -15,18 +15,18 @@ $promo_height_lg: 200px;
     width: min(85%, 350px);
     padding: 4rem 0;
     #blog-wrapper {
-      background-color: $dark;
+      background-color: var(--dark);
       text-align: center;
       width: calc(100% - 1rem);
       min-height: calc($promo_height * 1.75 + 100px);
       margin-bottom: 2rem;
-      color: $light;
+      color:var(--light);
       position: relative;
       @include breakpoint(medium) {
         width: 33.33333%;
       }
       .inner {
-        border: 2px solid $light;
+        border: 2px solidvar(--light);
         width: 100%;
         height: 100%;
         position: absolute;
@@ -41,7 +41,7 @@ $promo_height_lg: 200px;
           padding: 4rem 3rem;
         }
         h3 {
-          color: $light;
+          color:var(--light);
         }
         .button {
           cursor: pointer;
@@ -70,7 +70,7 @@ $promo_height_lg: 200px;
         bottom: 0;
         width: 100%;
         text-align: center;
-        color: $light;
+        color:var(--light);
         padding: 0.75rem;
         background-color: rgba(0,0,0,0.5);
         transition: background-color 0.3s ease;
