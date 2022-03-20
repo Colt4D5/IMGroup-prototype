@@ -208,8 +208,7 @@ add_filter( 'wp_theme_editor_filetypes', 'add_custom_editor_file_types' );
 
 
 // register Salon Info Settings page
-// require_once(get_stylesheet_directory() . '/assets/functions/salon_info.php');
-// require_once(get_stylesheet_directory() . '/assets/functions/salon_test.php');
+// require_once(get_stylesheet_directory() . 'inc/register-settings-page.php');
 
 
 

@@ -1,5 +1,3 @@
-console.log('Enqueued site.js');
-
 const subnavs = document.querySelectorAll('#mobile-menu .menu-item-has-children .is_subnav');
 
 function initMobileMenu() {

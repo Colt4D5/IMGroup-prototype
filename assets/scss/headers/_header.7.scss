@@ -1,8 +1,6 @@
 @use '../_mixins' as *;
 @use '../_globals' as *;
 
-// STILL GOTTA MAKE THIS STICKY 
-
 header {
   position: relative;
   #logo{
@@ -23,10 +21,20 @@ header {
     background-color: var(--primary);
     width: 100%;
     z-index: 4;
-    position: sticky;
+    position: relative;
     @include breakpoint(large) {
       position: absolute;
       bottom: 0;
+      top: auto;
+      &.sticky {
+        position: fixed!important;
+        top: 0;
+        bottom: auto;
+        ul.is_subnav {
+          top: 100%!important;
+          bottom: auto!important;
+        }
+      }
     }
     .inner {
       display: flex;
@@ -147,7 +155,6 @@ header {
   }
 
   #headerimage, #mobile-headerimage {
-    border-bottom: 3rem solid var(--primary);
     .swiper-slide {
       position: relative;
       background-size: cover;
