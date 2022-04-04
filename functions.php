@@ -207,9 +207,6 @@ function add_custom_editor_file_types( $types ) {
 add_filter( 'wp_theme_editor_filetypes', 'add_custom_editor_file_types' );
 
 
-// register Salon Info Settings page
-// require_once(get_stylesheet_directory() . 'inc/register-settings-page.php');
-
 
 
 // Register our sidebars and widgetized areas.
@@ -235,11 +232,3 @@ function remove_gb_block_styles() {
 	wp_dequeue_style( 'wp-block-library-theme' );
 }
 add_action( 'wp_enqueue_scripts', 'remove_gb_block_styles', 100 );
-
-
-
-
-// Thoughtful Settings Pages
-// require __DIR__ . '/vendor/autoload.php';
-
-// new \ThoughtfulWeb\SettingsPageWP\Page();

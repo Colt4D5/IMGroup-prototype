@@ -83,3 +83,14 @@ $breakpoints: (
     }
   }
 }
+
+/*******************
+ * usage: @include darkMode {
+ *    
+ * }
+*******************/
+@mixin darkMode {
+  @at-root body.dark {
+    @content;
+  }
+}
