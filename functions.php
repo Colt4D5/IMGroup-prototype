@@ -70,6 +70,10 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
+		$context['main_logo_url']  = get_option( 'main_logo_img' );
+		$context['dark_logo_url']  = get_option( 'dark_logo_img' );
+		$context['salon_name']  = get_option( 'salon_name' );
+		$context['salon_name_short']  = get_option( 'salon_name_abbrev' );
 		$context['menu']  = new Timber\Menu( 'primary-menu' );
 		$context['services_menu']  = new Timber\Menu( 'services-menu' );
 		$context['about_menu']  = new Timber\Menu( 'about-menu' );

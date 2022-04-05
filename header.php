@@ -10,6 +10,9 @@
  * @subpackage  Timber
  * @since   Timber 0.1
  */
-
+$context = Timber::context();
+$timber_post = Timber::get_post();
+$context['post'] = $timber_post;
 $GLOBALS['timberContext'] = Timber::context();
+Timber::render( array( 'sidebar.twig' ), $context );
 ob_start();
