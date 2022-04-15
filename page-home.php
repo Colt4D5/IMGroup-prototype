@@ -23,7 +23,7 @@
 
 $context = Timber::context();
 
-$timber_post     = new Timber\Post();
+$timber_post = new Timber\Post();
 $context['post'] = $timber_post;
 $args = array(
 	'post_type' => 'hp_slides',

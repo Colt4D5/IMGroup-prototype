@@ -1,6 +1,0 @@
-/vendor/
-/bin/
-/node_modules/
-/wpcs/
-.vscode
-*.zip

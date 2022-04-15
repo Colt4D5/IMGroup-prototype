@@ -1,0 +1,12 @@
+header #headerimage .swiper-slide {
+  picture {
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100vw;
+    }
+  }
+  .slide_text {
+    position: absolute;
+  }
+}

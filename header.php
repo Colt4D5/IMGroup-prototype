@@ -14,5 +14,6 @@ $context = Timber::context();
 $timber_post = Timber::get_post();
 $context['post'] = $timber_post;
 $GLOBALS['timberContext'] = Timber::context();
+$context['test'] = 'booooo';
 Timber::render( array( 'sidebar.twig' ), $context );
 ob_start();
