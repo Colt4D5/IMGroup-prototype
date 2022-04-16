@@ -18,19 +18,16 @@
 	{% if apple-icon %}
 		<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_site_icon_url( 57 )">
 	{% endif %}
-	 <?php if( ! has_site_icon() ) {?>
-		  <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_site_icon_url( 57 )">
-	  <?php } ?> -->
-	  
-	  <!-- {{ test }} -->
-	  
-	  <!-- 
+	<?php if( ! has_site_icon() ) {?>
+		<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_site_icon_url( 57 )">
+	<?php } ?> -->
+	
+	<!-- 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"> -->
 
 	<!-- favicon -->
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-	<!-- -->
 	<meta name="theme-color" content="#f73e3e" />
 
 	<!-- Font Awesome 5 -->
@@ -42,21 +39,18 @@
 		href="https://unpkg.com/swiper/swiper-bundle.min.css"
 	/>
 
-	<!-- TailwindCSS CDN -->
-	{# <script src="https://cdn.tailwindcss.com"></script> #}
-
-	<!-- Tailwind Config -->
-	{# <script>
-		tailwind.config = {
-			theme: {
-				extend: {
-					colors: {
-						test: '#ff0000',
-					}
-				}
-			}
-		}
-	</script> #}
-
-
 	{{function('wp_head')}}
+
+	<!-- CUSTOM CSS -->
+	{% if post.custom_css %}
+		<style>
+			{{ post.custom_css }}
+		</style>
+	{% endif %}
+
+	<!-- CUSTOM JS --> 
+{% if post.custom_js %}
+	<script defer type="text/javascript">
+		{{ post.custom_js }}
+	</script>
+{% endif %}
