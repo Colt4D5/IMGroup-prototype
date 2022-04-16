@@ -4,29 +4,31 @@
 		<div class="swiper-wrapper">
 			<!-- Slides -->
 			{% for header in headers %}
-				{% set desktop_img = TimberImage(header.slide_background_image).src %}
-				{% set mobile_img = TimberImage(header.background_image_mobile).src %}
+				{% if header.is_holiday_slide == 0 %}
+					{% set desktop_img = TimberImage(header.slide_background_image).src %}
+					{% set mobile_img = TimberImage(header.background_image_mobile).src %}
 
-				{# DESKTOP HEADER #}
-				{# <div class="swiper-slide" style="background-image: url({{ desktop_img }});" data-desktop-url="{{ desktop_img }}" data-mobile-url="{{ mobile_img }}" > #}
+					{# DESKTOP HEADER #}
+					{# <div class="swiper-slide" style="background-image: url({{ desktop_img }});" data-desktop-url="{{ desktop_img }}" data-mobile-url="{{ mobile_img }}" > #}
 
-				<div class="swiper-slide">
+					<div class="swiper-slide">
 
-					<picture>
-						<source media="(max-width: 799px)" srcset="{{ mobile_img }}">
-						<source media="(min-width: 800px)" srcset="{{ desktop_img }}">
-						<img src="{{ desktop_img }}" alt="Alt Tag">
-					</picture>
+						<picture>
+							<source media="(max-width: 799px)" srcset="{{ mobile_img }}">
+							<source media="(min-width: 800px)" srcset="{{ desktop_img }}">
+							<img src="{{ desktop_img }}" alt="Alt Tag">
+						</picture>
 
 
-				{% if header.slide_text %}
-					<div class="slide_text">
-						<div class="slide_text_inner">
-							{{ header.slide_text }}
+					{% if header.slide_text %}
+						<div class="slide_text">
+							<div class="slide_text_inner">
+								{{ header.slide_text }}
+							</div>
 						</div>
+					{% endif %}
 					</div>
 				{% endif %}
-				</div>
 			{% endfor %}
 		</div>
 		<!-- pagination -->

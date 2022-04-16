@@ -66,7 +66,7 @@ const desktopSwiper = new Swiper(".mySwiper", {
 
 
 // ______________________________ //
-const mobileSwiper = new Swiper(".myMobileSwiper", {
+const holidayHeader = new Swiper(".holidaySwiper", {
   centeredSlides: true,
   loop: true,
   // effect: "fade",
