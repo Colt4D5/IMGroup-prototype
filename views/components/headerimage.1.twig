@@ -1,7 +1,17 @@
 {% set bg_img = Image(post.page_title_image).src %}
+{% set color_scheme = '' %}
+{% set gradient = '' %}
+{% if post.header_color_scheme == 'dark' %}
+  {% set color_scheme = ' dark-theme' %}
+{% endif %}
+{% if post.header_gradient == 'light' %}
+  {% set gradient = ' light-gradient' %}
+{% elseif post.header_gradient == 'dark' %}
+  {% set gradient = ' dark-gradient' %}
+{% endif %}
 
 {% if bg_img %}
-  <div id="headerimage" style="background-image: url({{ bg_img }})"></div>
+  <div id="headerimage" style="background-image: url({{ bg_img }})" class="{{ post.header_align }}{{ color_scheme }}{{ gradient }}"></div>
 {% else %}
-  <div id="headerimage" style="background-image: url(https://imaginalhosting.com/wp-themes/images/img/aveda/behindthescenes/001.jpg)"></div>
+  <div id="headerimage" style="background-image: url(https://imaginalhosting.com/wp-themes/images/img/aveda/behindthescenes/001.jpg)" class="{{ post.header_align }}{{ color_scheme }}{{ gradient }}"></div>
 {% endif %}

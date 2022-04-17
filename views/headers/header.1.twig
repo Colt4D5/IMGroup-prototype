@@ -1,11 +1,16 @@
-	<div id="top-bar" class="">
-		<div class="inner">
-			<a href="/">
-				<img id="logo" src="{{ main_logo_url }}" alt="Logo | Some City, NA" />
-			</a>
-			<nav id="nav-main" role="navigation">
-				{% include "menu.twig" with {'items': menu.get_items} %}
-			</nav><!-- #nav -->
-			<div id="menuicon"><i class="fa-solid fa-bars"></i></div>
-		</div>
+{% set logo_url = main_logo_url %}
+{% if post.header_color_scheme == 'dark' %}
+	{% set logo_url = dark_logo_url %}
+{% endif %}
+
+<div id="top-bar" class="">
+	<div class="inner">
+		<a href="/">
+			<img id="logo" src="{{ logo_url }}" alt="Logo | Some City, NA" />
+		</a>
+		<nav id="nav-main" role="navigation">
+			{% include "menu.twig" with {'items': menu.get_items} %}
+		</nav><!-- #nav -->
+		<div id="menuicon"><i class="fa-solid fa-bars"></i></div>
 	</div>
+</div>

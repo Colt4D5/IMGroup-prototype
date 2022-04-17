@@ -74,6 +74,16 @@ class StarterSite extends Timber\Site {
 		$context['dark_logo_url']  = get_option( 'dark_logo_img' );
 		$context['salon_name']  = get_option( 'salon_name' );
 		$context['salon_name_short']  = get_option( 'salon_name_abbrev' );
+		$context['google_analytics_id'] = get_option( 'google_analytics_id' );
+		$context['google_maps_api_key'] = get_option( 'google_maps_api_key' );
+		$context['typekit_id'] = get_option( 'typekit_id' );
+		$context['foxycart_id'] = get_option( 'foxycart_id' );
+		$context['aveda_id'] = get_option( 'aveda_id' );
+		$context['facebook_url'] = get_option( 'facebook_url' );
+		$context['instagram_url'] = get_option( 'instagram_url' );
+		$context['twitter_url'] = get_option( 'twitter_url' );
+		$context['pinterest_url'] = get_option( 'pinterest_url' );
+		$context['yelp_url'] = get_option( 'yelp_url' );
 		$context['menu']  = new Timber\Menu( 'primary-menu' );
 		$context['services_menu']  = new Timber\Menu( 'services-menu' );
 		$context['about_menu']  = new Timber\Menu( 'about-menu' );
@@ -81,7 +91,6 @@ class StarterSite extends Timber\Site {
 		$context['aveda_menu']  = new Timber\Menu( 'aveda-menu' );
 		$context['footer_menu']  = new Timber\Menu( 'footer-menu' );
 		$context['footer_column_1'] = Timber::get_widgets( 'footer_column_1' );
-		$context['client_aveda_id'] = '23467';
 		$context['site']  = $this;
 		return $context;
 	}
