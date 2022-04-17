@@ -16,7 +16,7 @@
   <div class="team_member">
     <h2>Name: {{ person.name }}</h2>
     <h3>Title: {{ person.team_title }}</h3>
-    <p>ID: {{ person.id }}</p>
+    {# <p>ID: {{ person.id }}</p> #}
     {# <h4>{{ function(wp_get_attachment_url( get_post_thumbnail_id(person._thumbnail_id)) }}</h4> #}
     <img src="{{ Image(person.custom._thumbnail_id).src | resize(200, 300, 'top') }}" alt="image" />
   </div>
