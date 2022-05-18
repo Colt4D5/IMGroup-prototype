@@ -70,6 +70,9 @@
         grid-area: four;
         background-image: url(https://breezesalon.com/wp-content/themes/Imaginal-Child-09/assets/images/promo-blog.jpg);
         height: 575px;
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem;
       }
       &.five {
         grid-area: five;

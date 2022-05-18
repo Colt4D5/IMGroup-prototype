@@ -55,7 +55,7 @@ $photo_height_lrg: 450px;
           //   background-color: transparent;
           // }
         }
-        &:nth-child(6) {
+        &:nth-child(5), &:nth-child(7) {
           background-color: lighten($secondary, 15%);
         }
         display: flex;

@@ -42,4 +42,14 @@ $args = array(
 	'order' => 'ASC'
 	);
 $context['promos'] = Timber::get_posts($args);
+
+// this can be removed if not displaying blog posts
+$args = array( 'numberposts' => '1' );
+$context['post1'] = wp_get_recent_posts( $args )[0];
+$context['post1']['permalink'] = get_permalink($context['post1']['ID']);
+
+$args = array( 'numberposts' => '1', 'offset' => '1' );
+$context['post2'] = wp_get_recent_posts( $args )[0];
+$context['post2']['permalink'] = get_permalink($context['post2']['ID']);
+
 Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );

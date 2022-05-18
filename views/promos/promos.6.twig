@@ -13,33 +13,34 @@
     {% endfor %}
 
 
-      <div class="promo-box bottom-row">
+      <div class="promo-box bottom-row blog">
           <div class="promo_text">
-            <h3>Blog Title</h3>
-            <p>viverra adipiscing at in tellus integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque...</p>
+            <h3>{{ post1.post_title }}</h3>
+            <p>{{ post1.post_content[:130] }}...</p>
+            <p><a class="button" href="{{ post1.permalink }}">READ MORE</a></p>
           </div>
       </div>
 
 
-      <div class="promo-box bottom-row show-for-medium-only">
-          <div class="promo_text">
-            <h3>Other Blog Title</h3>
-            <p>viverra adipiscing at in tellus integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque...</p>
-          </div>
-      </div>
-
-
-      <div class="promo-box bottom-row">
+      <div class="promo-box bottom-row social hide-for-medium-only">
           <div class="social-icons">
             <a href="https://www.facebook.com/krissysalon2" target="_blank" rel="noopener"><i class="fa fa-lg fa-facebook"> </i></a>  <a href="https://www.instagram.com/kljhairstudio/" target="_blank" rel="noopener"><i class="fa fa-lg fa-instagram"> </i></a>
           </div>
       </div>
 
 
-      <div class="promo-box bottom-row hide-for-medium-only">
+      <div class="promo-box bottom-row blog">
           <div class="promo_text">
-            <h3>Other Blog Title</h3>
-            <p>viverra adipiscing at in tellus integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque...</p>
+            <h3>{{ post2.post_title }}</h3>
+            <p>{{ post2.post_content[:130] }}...</p>
+            <p><a class="button" href="{{ post2.permalink }}">READ MORE</a></p>
+          </div>
+      </div>
+
+
+      <div class="promo-box bottom-row social show-for-medium-only">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/krissysalon2" target="_blank" rel="noopener"><i class="fa fa-lg fa-facebook"> </i></a>  <a href="https://www.instagram.com/kljhairstudio/" target="_blank" rel="noopener"><i class="fa fa-lg fa-instagram"> </i></a>
           </div>
       </div>
 

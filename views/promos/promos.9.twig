@@ -26,7 +26,11 @@
       <a href="https://www.facebook.com/krissysalon2" target="_blank" role="button" title="Facebook"><i class="fa fa-lg fa-facebook"></i></a><a href="https://www.instagram.com/kljhairstudio/" target="_blank" role="button" title="Instagram"><i class="fa fa-lg fa-instagram"></i></a>
     </div>
 
-    <div class="grid-item four blog"></div>
+    <div class="grid-item four blog">
+      <h3>{{ post1.post_title }}</h3>
+      <p>{{ post1.post_content[:120] }}...</p>
+      <p><a class="button" href="{{ post1.permalink }}">READ MORE</a></p>
+    </div>
 
     <div class="promo-box grid-item five">
       <a class="photo" href="{{ promo2.promo_link }}" {% if promo2.promo_target %} target="_blank" {% endif %} style="background-image: url({{ Image(promo2.custom_promo_image).src }})"></a>
