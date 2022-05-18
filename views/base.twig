@@ -29,7 +29,7 @@
 			{% endblock %}
 		</header>
 
-		<section id="content" aria-label="body content" class="{% if fn('is_front_page') %}home{% endif %} content-wrapper {% if not fn('is_front_page') %}row{% endif %}" aria-labelledby="title">
+		<section id="content" aria-label="body content" class="{% if fn('is_front_page') or function('is_page', 1442) %}home {% endif %}content-wrapper{% if not fn('is_front_page') and not function('is_page', 1442) %} row{% endif %}" aria-labelledby="title">
 			{% if sidebar %}
 				<aside id="sidebar" class="sidebar sidebar-wrapper large-4 medium-12 columns {{ post.id }}-sidebar" role="complementary" data-equalizer-watch>
 					{% block sidebar %}

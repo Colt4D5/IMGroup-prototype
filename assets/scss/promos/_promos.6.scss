@@ -62,7 +62,7 @@ $photo_height_lrg: 450px;
         justify-content: center;
         align-items: center;
         padding: 2rem;
-        background-color: var(--primary);
+        background-color: lighten($primary, 10%);
         max-width: 375px;
         @include breakpoint(large) {
           height: calc($photo_height_lrg + 116px);
