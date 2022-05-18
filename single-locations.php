@@ -37,4 +37,5 @@ $context['menu_title'] = $menu_title;
 $context['current_menu'] = $menu_title . '_menu';
 $context['sidebar'] = Timber::get_sidebar('sidebar.twig');
 $context['footer_column_1'] = Timber::get_widgets( 'footer_column_1' );
+$context['hours'] = get_option('hours');
 Timber::render( array( 'single-locations.twig' ), $context );
