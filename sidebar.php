@@ -17,6 +17,12 @@
 // } else {
 //   $side = dynamic_sidebar('default');
 // }
+$menu_title = '';
+if ( get_field('that_sidebar' )) {
+  $menu_title = get_field( 'that_sidebar' );
+} else {
+  $menu_title = 'about';
+}
 
 
 $context = Timber::context();

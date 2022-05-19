@@ -52,6 +52,9 @@ header {
             &.cta > a {
               background-color: var(--light);
               color: var(--dark);
+              @include breakpoint(large) {
+                margin-left: 0.5em;
+              }
             }
             &.cta:hover > a {
               background-color: darken($light, 15%);
@@ -107,6 +110,7 @@ header {
   }
 
   #headerimage {
+    height: 100vh;
     border-bottom: 2.5rem solid var(--primary);
     .swiper-slide {
       position: relative;

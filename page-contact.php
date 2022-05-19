@@ -32,11 +32,9 @@ $context = Timber::context();
 
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
-$context['phone_number'] = preg_replace('/\D/', '', get_field('location_phone'));
 $context['menu_title'] = $menu_title;
 $context['current_menu'] = $menu_title . '_menu';
 $context['sidebar'] = Timber::get_sidebar('sidebar.twig');
-$context['footer_column_1'] = Timber::get_widgets( 'footer_column_1' );
 $context['hours'] = get_option('hours');
 $context['contact_info'] = get_option('contact_info');
-Timber::render( array( 'single-locations.twig' ), $context );
+Timber::render( 'page-contact.twig', $context );

@@ -118,6 +118,7 @@ header {
   }
 
   #headerimage, #mobile-headerimage {
+    height: 100vh;
     .swiper-slide {
       background-position: center;
       background-size: cover;

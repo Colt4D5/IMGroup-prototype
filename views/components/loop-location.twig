@@ -4,11 +4,14 @@
 
 	<section class="entry-content" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" aria-labelledby="location-title">
 		<div itemprop="locationName"><h1 id="location-title" class="page-title">{{ post.title }}</h1></div>
-		<div class="row">
-			<div class="medium-6 columns">
+
+		{% include 'components/loop-contact-info.twig' %}
+
+
+		{# <div class="row">
+			<div class="medium-5 columns">
 				<h3>Visit Us</h3>
 				<p>
-					{# <span itemprop="streetAddress"><?php the_field('location_address'); ?></span><br/> #}
 					<span itemprop="streetAddress">{{ post.location_address }}</span><br/>
 					<span itemprop="addressLocality">{{ post.location_city }}</span>,
 					<span itemprop="addressRegion">{{ post.location_state }}</span>
@@ -28,13 +31,13 @@
 					</div>
 				{% endif %}
 			</div>
-			<div class="medium-6 columns">
+			<div class="medium-7 columns">
 				<div class="hours">
 					<h3>Hours</h3>
 					{{ hours|raw }}
 				</div>
 			</div>
-		</div>
+		</div> #}
 
 		{% if post.location_booking %}
 				<br/><a class="button" href="{{ post.location_booking }}">Book Now</a>

@@ -91,6 +91,9 @@ class StarterSite extends Timber\Site {
 		$context['aveda_menu']  = new Timber\Menu( 'aveda-menu' );
 		$context['footer_menu']  = new Timber\Menu( 'footer-menu' );
 		$context['footer_column_1'] = Timber::get_widgets( 'footer_column_1' );
+		$context['footer_column_2'] = Timber::get_widgets( 'footer_column_2' );
+		$context['footer_column_3'] = Timber::get_widgets( 'footer_column_3' );
+		$context['footer_column_4'] = Timber::get_widgets( 'footer_column_4' );
 		$context['site']  = $this;
 		return $context;
 	}
@@ -226,9 +229,45 @@ add_filter( 'wp_theme_editor_filetypes', 'add_custom_editor_file_types' );
 function arphabet_widgets_init() {
 
 	register_sidebar( array(
+		'name'          => 'Blog Sidebar',
+		'id'            => 'blog_sidebar',
+		'before_widget' => '<div class="blog-sidebar-item">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
 		'name'          => 'Footer Column 1',
 		'id'            => 'footer_column_1',
 		'before_widget' => '<div id="foot1">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Column 2',
+		'id'            => 'footer_column_2',
+		'before_widget' => '<div id="foot2">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Column 3',
+		'id'            => 'footer_column_3',
+		'before_widget' => '<div id="foot3">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Column 4',
+		'id'            => 'footer_column_4',
+		'before_widget' => '<div id="foot4">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',

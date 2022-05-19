@@ -6,6 +6,10 @@ section#content {
     padding: 4rem 1rem;
   }
 
+  #contact-info {
+    padding-bottom: 4rem;
+  }
+
   // Mobile subnav
   #mobile-nav {
     width: 100%;
@@ -138,6 +142,23 @@ body.error404 {
         max-width: 200px;
       }
     }
+  }
+}
+
+table.im-services tbody tr td.serv-col.serv-price {
+  min-width: 40%;
+  @include breakpoint(medium) {
+    min-width: 35%;
+  }
+  @include breakpoint(large) {
+    min-width: 25%;
+  }
+}
+
+table.hours {
+  width: 100%;
+  td {
+    padding: 0 8px 2px 0;
   }
 }
 

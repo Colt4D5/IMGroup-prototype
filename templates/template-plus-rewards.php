@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Why Aveda
+Template Name: Plus Rewards
 */
 
 
@@ -25,4 +25,4 @@ $context['menu_title'] = $menu_title;
 $context['current_menu'] = $menu_title . '_menu';
 $context['sidebar'] = Timber::get_sidebar('sidebar.twig');
 $context['aveda_id'] = get_option('aveda_id');
-Timber::render( array( 'template-why-aveda.twig' ), $context );
+Timber::render( array( 'template-plus-rewards.twig' ), $context );

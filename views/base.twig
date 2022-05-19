@@ -33,7 +33,7 @@
 			{% if sidebar %}
 				<aside id="sidebar" class="sidebar sidebar-wrapper large-4 medium-12 columns {{ post.id }}-sidebar" role="complementary" data-equalizer-watch>
 					{% block sidebar %}
-						testing!
+						{% include 'sidebar.twig' %}
 					{% endblock %}
 				</aside>
 			{% endif %}

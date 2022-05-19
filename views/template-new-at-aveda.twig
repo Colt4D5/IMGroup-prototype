@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+  {{ parent() }}
+	{% include 'components/headerimage.1.twig' %}
+{% endblock %}
+
+{% block sidebar %}
+	{% include 'sidebar.twig' %}
+{% endblock %}
+
+{% block content %}
+  <h1 class="page-title">{{post.title}}</h1>
+  {{ post.content }}
+  <a href="https://www.aveda.com/locator/get_the_facts.tmpl?vanity=1&SalonID={{ aveda_id }}" target="_blank" rel="noopener noreferrer"><img style="width: 100%; height: auto; max-width: 500px;" src="http://www.imaginalmarketing.com/aveda-promos/promoimage.php?p=large" alt="1" border="0" /></a>
+{% endblock %}

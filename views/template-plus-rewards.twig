@@ -1,0 +1,38 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+  {{ parent() }}
+	{% include 'components/headerimage.1.twig' %}
+{% endblock %}
+
+{% block sidebar %}
+	{% include 'sidebar.twig' %}
+{% endblock %}
+
+{% block content %}
+  <h1 class="page-title">{{post.title}}</h1>
+  <h3>LOVING AVEDA
+IS EVEN
+MORE REWARDING</h3>
+<p><strong>Sign up for Aveda Plus Rewards!</strong> Aveda's updated rewards program now features more gifts, more special offers, and more opportunities to redeem your points.</p>
+<ul>
+  <li>7 tiers of gifts, ranging from beauty &amp; wellness goods and services to a healing spa vacation</li>
+  <li>Rewards Catalogue Expanded — with 15 new Aveda products</li>
+  <li>Lifestyle Mission-Aligned Brands Added — including ettitude, Sakara Life and obé fitness</li>
+  <li>U.S. Destination Reward Included — the LeMonds Aveda Salon Spa at The Wigwam Resort in Arizona</li>
+  <li>Account Activity Updated - keep your membership active by making purchases OR redeeming your points</li>
+  <li>Free Standard Shipping — on every <a href="https://www.aveda.com/locator/get_the_facts.tmpl?vanity=1&SalonID={{ aveda_id }}" target="_blank" rel="noopener noreferrer">Aveda.com</a> order</li>
+</ul>
+<p>Earn points on all Aveda purchases: $1 = 10 points.</p>
+<h3>NOT A MEMBER? NOW IS THE TIME TO SIGN UP!</h3>
+<a class="button" href="https://www.aveda.com/aveda-plus-rewards-program" target="_blank" rel="noopener noreferrer">Join the Club</a>
+
+<p>or sign up during your next visit to {{ site.name }}.</p>
+
+<a class="button" href="/book-online/" rel="noopener">Book Now</a>
+<h3>A+ MEMBERS CORNER</h3>
+Login to your Aveda Plus account, check out the updated gift catalogue, and redeem your points <a href="https://www.aveda.com/account/pure_privilege/transactions.tmpl" target="_blank" rel="noopener noreferrer">here</a>.
+
+Or, call Aveda Plus Member Services at <a href="tel:+18002308051">800.230.8051</a>.
+
+{% endblock %}

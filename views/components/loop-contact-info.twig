@@ -1,0 +1,34 @@
+
+<div id="contact-info" class="row">
+  <div class="medium-5 column">
+    <h3>VISIT US</h3>
+    {{ contact_info }}
+
+    {% if facebook_url %}
+      <a href="{{ facebook_url }}" alt="facebook icon" role="button" title="Facebook" target="_blank"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if instagram_url %}
+      <a href="{{ instagram_url }}" alt="instagram icon" role="button" title="Instagram" target="_blank"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if twitter_url %}
+      <a href="{{ facebook_url }}" alt="facebook icon" role="button" title="Facebook" target="_blank"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if pinterest_url %}
+      <a href="{{ instagram_url }}" alt="instagram icon" role="button" title="Instagram" target="_blank"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if yelp_url %}
+      <a href="{{ instagram_url }}" alt="instagram icon" role="button" title="Instagram" target="_blank"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
+    {% endif %}
+
+  </div> {# end Visit column #}
+  
+  <div class="medium-7 column">
+    <h3>HOURS</h3>
+    {{ hours|raw }}
+
+  </div>{# end Hours column #}
+</div> {# end contact row #}

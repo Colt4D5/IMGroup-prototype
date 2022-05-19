@@ -18,6 +18,10 @@
 		{% for item in aveda_menu.get_items %}
 			<li class="{{ item.classes | join(' ') }}"><a href="{{ item.link }}" class="location-menu-item" target="{{ item.target }}">{{ item.title }}</a></li>
 		{% endfor %}
+	{% elseif menu_title == 'blog' %}
+		{{ blog_sidebar }}
+	{% else %}
+		Menu Title: {{ menu_title }}
 	{% endif %}
 	</ul>
 </nav>

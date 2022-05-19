@@ -1,5 +1,17 @@
 {% extends "base.twig" %}
 
+{% block header %}
+	{{ parent() }}
+	{% include 'components/headerimage.1.twig' %}
+{% endblock %}
+
+{% block sidebar %}
+	{% include 'sidebar.twig' %}
+	{# <nav id="mobile-subnav" class="hide-for-large" aria-label="about Mobile Navigation"> #}
+		{# {{ sidebar }} #}
+	{# </nav> #}
+{% endblock %}
+
 {% block content %}
 	<div class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
