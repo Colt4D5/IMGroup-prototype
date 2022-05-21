@@ -2,9 +2,14 @@ const subnavs = document.querySelectorAll('#mobile-menu .menu-item-has-children 
 
 function initMobileMenu() {
   const hamburger = document.querySelector('#menuicon');
+  const closeBtn = document.querySelector('.fa-xmark');
 
   hamburger.addEventListener('click', () => {
-    document.querySelector('#mobile-menu').style.display = 'block';
+    // Standard style
+    // document.querySelector('#mobile-menu').style.display = 'block';
+
+    // Styling for circle reveal menu
+    document.querySelector('#mobile-menu').style.display = 'flex';
     toggleMobileMenu();
     disableScroll();
   })
@@ -13,6 +18,11 @@ function initMobileMenu() {
     subnavs.forEach(sub => {
       sub.style.maxHeight = '0';
     })
+    toggleMobileMenu();
+    enableScroll();
+  })
+
+  closeBtn.addEventListener('click', () => {
     toggleMobileMenu();
     enableScroll();
   })

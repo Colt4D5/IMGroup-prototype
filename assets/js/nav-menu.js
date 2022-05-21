@@ -56,7 +56,7 @@ function initMobileSubnav() {
       const allSubnavs = document.querySelectorAll('#mobile-menu .is_subnav');
       allSubnavs.forEach(nav => {
         if (nav != subnav) {
-          nav.closest('li').classList.add('is_open');
+          nav.closest('li').classList.remove('is_open');
           nav.style.maxHeight = `0`;
         }
       })

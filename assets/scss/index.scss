@@ -4,9 +4,9 @@
 @forward 'foundation';
 
 ///////// header stuff /////////
-@forward './headers/header.1';
+// @forward './headers/header.1';
 // @forward './headers/header.2';
-// @forward './headers/header.3';
+@forward './headers/header.3';
 // @forward './headers/header.5';
 // @forward './headers/header.6';
 // @forward './headers/header.7';
@@ -17,12 +17,12 @@
 ///////// promos stuff /////////
 // @forward './promos/promos.1';
 // @forward './promos/promos.2';
-// @forward './promos/promos.3';
+@forward './promos/promos.3';
 // @forward './promos/promos.4';
 // @forward './promos/promos.5';
 // @forward './promos/promos.6';
 // @forward './promos/promos.7';
-@forward './promos/promos.8';
+// @forward './promos/promos.8';
 // @forward './promos/promos.9';
 
 ///////// intro stuff /////////
@@ -41,8 +41,9 @@
 @forward 'team';
 
 ///////// footer stuff /////////
-@forward './footers/footer.1';
-// @forward './footers/footer.2';
+// @forward './footers/footer.1';
+@forward './footers/footer.2';
 
 ///////// mobile menu stuff /////////
-@forward 'mobile-menu.1';
+// @forward 'mobile-menu.1';
+@forward 'mobile-menu.2';
