@@ -7,9 +7,6 @@
 
 {% block sidebar %}
 	{% include 'sidebar.twig' %}
-	{# <nav id="mobile-subnav" class="hide-for-large" aria-label="about Mobile Navigation"> #}
-		{# {{ sidebar }} #}
-	{# </nav> #}
 {% endblock %}
 
 {% block content %}
@@ -18,16 +15,14 @@
 			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
 			<section class="article-content">
 				<h1 class="article-h1">{{ post.title }}</h1>
-				<a href="{{ post.link }}">{{ _e('edit') }}</a>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
-				</p>
+				<p class="blog-date">Posted on <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time> - {{ category }}</p>
 				<div class="article-body">
 					{{post.content}}
 				</div>
 			</section>
 
-			<!-- comment box -->
+			{# who needs comments, amiright, fellas? #}
+			{# <!-- comment box -->
 			<section class="comment-box">
 				<!-- comments -->
 				<div class="comments">
@@ -45,7 +40,7 @@
 					<!-- comment form -->
 					{% include "comment-form.twig" %}
 				{% endif %}
-			</section>
+			</section> #}
 		</article>
 	</div><!-- /content-wrapper -->
 {% endblock %}

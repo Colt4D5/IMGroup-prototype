@@ -6,8 +6,13 @@
 	{% include 'components/headerimage.1.twig' %}
 {% endblock %}
 
+{% block sidebar %}
+	{% include 'sidebar.twig' %}
+{% endblock %}
+
 {% block content %}
   {# see `base.twig:27` for where this block's content will be inserted #}
+  <h1>{{ title }}</h1>
   <div class="content-wrapper">
     {% for post in posts %}
       {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
