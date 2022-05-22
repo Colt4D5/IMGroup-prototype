@@ -52,4 +52,6 @@ $args = array( 'numberposts' => '1', 'offset' => '1' );
 $context['post2'] = wp_get_recent_posts( $args )[0];
 $context['post2']['permalink'] = get_permalink($context['post2']['ID']);
 
+$context['ig-feed'] = do_shortcode('[instagram-feed]');
+
 Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );

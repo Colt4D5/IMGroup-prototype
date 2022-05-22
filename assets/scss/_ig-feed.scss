@@ -1,0 +1,24 @@
+@use 'mixins' as *;
+@use 'globals' as *;
+
+#ig-wrapper {
+  #ig-feed-wrapper {
+    padding: 3rem 0;
+    background-color: #eee;
+    h2 {
+      text-align: center;
+    }
+    #ig-feed {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .ig-post {
+        width: clamp(200px, 80vw, 300px);
+        aspect-ratio: 1 / 1;
+        border: 3px solid #ccc;
+        background-color: #ddd;
+        margin: 0 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+@use 'globals' as *;
+
+body.dark_enabled {
+  @at-root {
+    :root {
+      --primary-lgt: hsl(199, 100%, 15%);
+      --primary: hsl(199, 100%, 15%);
+      --primary-drk: hsl(199, 100%, 15%);
+      --secondary: hsl(204, 25%, 49%);
+      --tertiary: hsl(0, 0%, 0%); //Not currently in use
+      --light: hsl(0, 0%, 100%);
+      --dark: hsl(0, 0%, 7%);
+    }
+  }
+}

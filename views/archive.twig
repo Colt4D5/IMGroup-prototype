@@ -4,6 +4,12 @@
 {% extends "blog.twig" %}
 
 {% block content %}
-  {{ post.title }}
-  {{ parent() }}
+  <h1>{{ title }}</h1>
+  <div class="content-wrapper">
+    {% for post in posts %}
+      {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+    {% endfor %}
+
+    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  </div>
 {% endblock %}

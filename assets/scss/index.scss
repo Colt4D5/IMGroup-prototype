@@ -28,6 +28,9 @@
 ///////// intro stuff /////////
 @forward 'intro';
 
+///////// instagram feed stuff /////////
+@forward 'ig-feed';
+
 ///////// interior headerimage stuff /////////
 @forward 'headerimage.1';
 
@@ -47,3 +50,6 @@
 ///////// mobile menu stuff /////////
 // @forward 'mobile-menu.1';
 @forward 'mobile-menu.2';
+
+///////// dark mode stuff /////////
+@forward 'dark-mode';
