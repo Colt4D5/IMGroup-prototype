@@ -64,6 +64,7 @@ function initMobileSubnav() {
         subnav.closest('li').classList.add('is_open');
         subnav.style.maxHeight = `${subnav.dataset.height}px`;
       } else {
+        subnav.closest('li').classList.remove('is_open');
         subnav.style.maxHeight = `0`;
         // subnav.closest('li').classList.remove('is_open');
       }

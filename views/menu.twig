@@ -1,5 +1,5 @@
 {% if menu %}
-	<ul>
+	<ul class="top-level">
 	{% for item in items %}
 		<li class="{{ item.classes | join(' ') }}">
 			<a target="{{ item.target }}" href="{{ item.link }}" data-link >{{ item.title }}{% if item.get_children %}{{ icon }}{% endif %}</a>

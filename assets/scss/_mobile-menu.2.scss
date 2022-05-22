@@ -24,6 +24,7 @@
     padding: 1rem;
     margin: 0;
     list-style: none;
+    text-align: center;
     li {
       a {
         font-size: 1.75rem;
@@ -76,6 +77,9 @@
           font-size: 1rem;
         }
       }
+    }
+    &.top-level > li > a {
+      text-transform: uppercase;
     }
   }
 
