@@ -27,6 +27,10 @@ section#content {
     &:hover {
       background-color: lighten($primary, 5%);
     }
+    ul {
+      list-style: none;
+      padding: 1rem 2rem 3rem;
+    }
   }
   #mobile-subnav {
     width: 100%;
@@ -39,6 +43,9 @@ section#content {
     pointer-events: none;
     transition: max-height 0.3s ease;
     margin-bottom: 2rem;
+    ul {
+      list-style: none;
+    }
     ul.is_mobile_subnav {
       padding: 0;
       margin: 1rem 0;

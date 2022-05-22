@@ -1,6 +1,11 @@
 {# see `archive.twig` for an alternative strategy of extending templates #}
 {% extends "base.twig" %}
 
+{% block header %}
+	{{ parent() }}
+	{% include 'components/headerimage.1.twig' %}
+{% endblock %}
+
 {% block content %}
   {# see `base.twig:27` for where this block's content will be inserted #}
   <div class="content-wrapper">

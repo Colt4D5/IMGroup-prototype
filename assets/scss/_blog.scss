@@ -1,23 +1,37 @@
 @use 'mixins' as *;
 @use 'globals' as *;
 
-section#content #sidebar {
-  #sidenav {
-    .is_sidenav {
-      .blog-sidebar-item {
-        margin-bottom: 2rem;
-        h2 {
-          margin: 0;
-        }
-        padding-right: 2rem;
-        & > ul {
-          list-style: none;
-          li {
-            a {
-              padding: 0;
+.blog section#content {
+  #sidebar {
+    #sidenav {
+      .is_sidenav {
+        .blog-sidebar-item {
+          margin-bottom: 2rem;
+          h2 {
+            margin: 0;
+          }
+          padding-right: 2rem;
+          & > ul {
+            padding: 0;
+            list-style: none;
+            li {
+              a {
+                padding: 0;
+              }
             }
           }
         }
+      }
+    }
+  }
+  #mobile-subnav {
+    ul {
+      padding: 0;
+    }
+    ul.is_mobile_subnav {
+      padding: 1rem 2rem 4rem;
+      input[type="submit"] {
+        margin: 1rem 0 0;
       }
     }
   }
