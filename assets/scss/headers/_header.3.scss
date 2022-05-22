@@ -53,6 +53,10 @@ header {
               &.cta > a {
                 background-color: var(--light);
                 color: $dark;
+                margin-left: 0.25em;
+                &:focus {
+                  outline: 3px solid var(--primary);
+                }
               }
               &.cta:hover > a {
                 background-color: darken($light, 15%);
