@@ -298,3 +298,11 @@ function filter_draft_pages_from_menu ($items, $args) {
 	return $items;
 }
 add_filter ('wp_nav_menu_objects', 'filter_draft_pages_from_menu', 10, 2);
+
+// mu-plugins/load.php
+require WPMU_PLUGIN_DIR.'/im-teampage/index.php';
+require WPMU_PLUGIN_DIR.'/promos/promos.php';
+require WPMU_PLUGIN_DIR.'/im-salon-settings/im-salon-settings.php';
+require WPMU_PLUGIN_DIR.'/homepage-slides/homepage-slides.php';
+require WPMU_PLUGIN_DIR.'/im-locations/index.php';
+require WPMU_PLUGIN_DIR.'/im-services/im-services-manager.php';
