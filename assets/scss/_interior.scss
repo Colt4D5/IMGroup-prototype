@@ -114,8 +114,10 @@ section#content {
             display: inline-block;
             padding: 0.5rem 2rem 0.5rem 0;
             font-weight: 100;
-            &:focus {
-              outline: 3px solid var(--primary);
+            @at-root {
+              body.accessibility-enabled #sidebar #sidenav ul.is_sidenav li a:focus {
+                outline: 3px solid var(--primary);
+              }
             }
           }
           &.current_page_item a, &.current-menu-item a {
