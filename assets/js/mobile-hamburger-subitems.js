@@ -1,44 +1,14 @@
-const links = document.querySelectorAll('#nav-main [data-link]');
+// I do declare...
 const navigation = document.querySelector('nav');
 const mobileSubnav = document.querySelector('#mobile-nav');
 
-function initMenuLinks() {
-  links.forEach(link => {
-    link.addEventListener('mouseover', mouseOver);
-  })
-}
-
-function mouseOver(e) {
-  links.forEach(link => {
-    link.dataset.link = '';
-  })
-  const subnav = e.target.closest('li').querySelector('.is_subnav');
-  if (subnav) e.target.closest('li').addEventListener('mouseleave', mouseOut);
-
-  navigation.addEventListener('mouseleave', mouseOut);
-  if (!subnav) return;
-
-  subnav.classList.add('is_open');
-}
-
-function mouseOut(e) {
-  links.forEach(link => {
-    if (link !== e.target.closest('li')) {
-      const subnav = link.closest('li').querySelector('.is_subnav');
-      link.dataset.link = '';
-      if (subnav) subnav.classList.remove('is_open');
-    } else {
-      const subnav = link.closest('li').querySelector('.is_subnav');
-      if (subnav) setTimeout( () => subnav.classList.remove('is_open'), 300);
-    }
-  })
-}
-
-
 
 //____________________________________// MOBILE MENU
+
+// declare that mobile stuffs
 let liHasChildren = document.querySelectorAll('#mobile-menu .menu-item-has-children');
 
+// the magic that handles subnav heights
 function initMobileMenu() {
   liHasChildren.forEach(li => {
     const subnav = li.querySelector('.is_subnav');
@@ -47,6 +17,7 @@ function initMobileMenu() {
   })
 }
 
+// event listener for mobile hamburger menu for items with sub-items
 function initMobileSubnav() {
   document.querySelectorAll('#mobile-menu li.menu-item-has-children > a').forEach(link => {
     link.addEventListener('click', e => {
@@ -78,13 +49,13 @@ function initMobileSubnav() {
 function initMobileIntSubnav() {
   const mobileSubnav = document.querySelector('#mobile-nav');
   if (mobileSubnav) {
-	mobileSubnav.addEventListener('click', toggleMobileSubnav);
-	const subnav = document.querySelector('#mobile-subnav');
-	subnav.setAttribute('data-height', subnav.getBoundingClientRect().height);
-	subnav.style.maxHeight = 0;
-	subnav.style.opacity = 1;
-	subnav.style.position = 'relative';
-	subnav.style.pointerEvents = 'auto';
+    mobileSubnav.addEventListener('click', toggleMobileSubnav);
+    const subnav = document.querySelector('#mobile-subnav');
+    subnav.setAttribute('data-height', subnav.getBoundingClientRect().height);
+    subnav.style.maxHeight = 0;
+    subnav.style.opacity = 1;
+    subnav.style.position = 'relative';
+    subnav.style.pointerEvents = 'auto';
   }
 }
 
@@ -98,17 +69,7 @@ function toggleMobileSubnav() {
   // subnav.style.display = 'block'
 }
 
-
-initMenuLinks();
+// do the things
 initMobileMenu();
 initMobileSubnav();
 initMobileIntSubnav();
-
-// window.addEventListener('resize', resizeWindow)
-
-// function resizeWindow() {
-//   liHasChildren = document.querySelectorAll('#mobile-menu .menu-item-has-children')
-//   initMenuLinks()
-//   initMobileMenu()
-//   initMobileSubnav()
-// }
