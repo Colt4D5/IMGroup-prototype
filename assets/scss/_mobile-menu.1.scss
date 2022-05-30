@@ -38,14 +38,6 @@
           transition: transform 0.2s ease-out;
         }
       }
-      &.current-menu-parent {
-        & > a {
-          font-weight: 500;
-          i {
-            transform: rotate(180deg);
-          }
-        }
-      }
       &.is_open {
           & > a {
             font-weight: 500;
@@ -62,8 +54,13 @@
       overflow: hidden;
       padding: 0;
       margin: 0 0 0 1rem;
-      li a {
-        font-size: 1rem;
+      li {
+        a {
+          font-size: 1rem;
+        }
+        &.current_page_item a {
+          font-weight: 500;
+        }
       }
     }
   }
