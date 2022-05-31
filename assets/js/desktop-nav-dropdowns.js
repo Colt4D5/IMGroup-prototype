@@ -2,7 +2,7 @@
 const links = document.querySelectorAll('#nav-main [data-link]');
 
 function initMenuLinks() {
-  links.forEach(link => {
+  links?.forEach(link => {
     link.addEventListener('mouseover', mouseOver);
   })
 }

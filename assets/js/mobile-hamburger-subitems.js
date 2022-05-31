@@ -10,7 +10,7 @@ let liHasChildren = document.querySelectorAll('#mobile-menu .menu-item-has-child
 
 // the magic that handles subnav heights
 function initMobileMenu() {
-  liHasChildren.forEach(li => {
+  liHasChildren?.forEach(li => {
     const subnav = li.querySelector('.is_subnav');
     subnav.dataset.height = subnav.getBoundingClientRect().height;
     subnav.style.maxHeight = '0';
@@ -19,7 +19,7 @@ function initMobileMenu() {
 
 // event listener for mobile hamburger menu for items with sub-items
 function initMobileSubnav() {
-  document.querySelectorAll('#mobile-menu li.menu-item-has-children > a').forEach(link => {
+  document.querySelectorAll('#mobile-menu li.menu-item-has-children > a')?.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const subnav = link.closest('li').querySelector('ul.is_subnav');
@@ -41,7 +41,9 @@ function initMobileSubnav() {
       }
     })
   })
-  if (innerWidth > 1024) document.querySelector('#mobile-menu').style.display = 'none';
+  if (innerWidth > 1024 && document.querySelector('#mobile-menu') !== null) {
+    document.querySelector('#mobile-menu').style.display = 'none'
+  };
 }
 
 //____________________________________// MOBILE SUBNAV MENU

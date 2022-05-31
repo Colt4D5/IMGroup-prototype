@@ -1,12 +1,14 @@
 // declare all the things
 const subnavs = document.querySelectorAll('#mobile-menu .menu-item-has-children .is_subnav');
 
+
+// *** gotta update menu size for header.6 ***
 function initMobileMenu() {
   const hamburger = document.querySelector('#menuicon');
   const closeBtn = document.querySelector('.fa-xmark');
 
   // mmmmmm, hamburger
-  hamburger.addEventListener('click', () => {
+  hamburger?.addEventListener('click', () => {
     // Standard style
     // document.querySelector('#mobile-menu').style.display = 'block';
 
@@ -17,7 +19,7 @@ function initMobileMenu() {
   })
 
   // deploy the iron curtain and open side menu
-  document.querySelector('#mobile-overlay').addEventListener('click', () => {
+  document.querySelector('#mobile-overlay')?.addEventListener('click', () => {
     subnavs.forEach(sub => {
       sub.style.maxHeight = '0';
     })
@@ -26,7 +28,7 @@ function initMobileMenu() {
   })
 
   // close mobile menu
-  closeBtn.addEventListener('click', () => {
+  closeBtn?.addEventListener('click', () => {
     toggleMobileMenu();
     enableScroll();
   })
