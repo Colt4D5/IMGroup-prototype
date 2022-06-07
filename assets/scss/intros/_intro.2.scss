@@ -1,0 +1,41 @@
+@use '../mixins' as *;
+@use '../globals' as *;
+
+#intro {
+  padding: 0;
+  & > div.medium-6 {
+    min-height: 400px;
+    @include breakpoint(medium) {
+      min-height: 450px;
+    }
+  }
+  .intro-wrapper {
+    text-align: center;
+    max-width: none;
+    padding: 3rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h3, p {
+      max-width: 650px;
+    }
+    h3 {
+      font-size: clamp(1.25rem, 3vw, 2.5rem);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 100;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+    p {
+      line-height: 1.25;
+      font-weight: 100;
+    }
+  }
+  .intro-img-wrapper {
+    // This is where the background-image goes...
+    background-color: lighten($secondary, 30%);
+  }
+}
