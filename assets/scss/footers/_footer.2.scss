@@ -4,11 +4,8 @@
 footer {
   #footer-top {
     #inner {
-      #footer-logo {
-        width: 100px;
-        margin: 0 auto 0.5rem;
-      }
-      background: url(/wp-content/uploads/2022/02/footer_bg_texture.png), var(--primary);
+      background: url(/wp-content/uploads/2022/03/footer_bg_texture-1024x240-1.webp), var(--primary);
+      background-size: cover;
       height: 450px;
       display: flex;
       justify-content: center;
@@ -17,6 +14,10 @@ footer {
       font-size: 1.15rem;
       line-height: 1.6;
       text-align: center;
+      #footer-logo {
+        width: 100px;
+        margin: 0 auto 0.5rem;
+      }
       #foot1 {
         font-weight: 300;
         p {

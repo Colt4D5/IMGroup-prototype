@@ -30,6 +30,14 @@ if ( get_field('that_sidebar' )) {
 
 $context = Timber::context();
 
+$args = array(
+	'post_type' => 'promo_btn',
+	'posts_per_page' => '-1',
+	'orderby' => 'menu_order',
+	'order' => 'ASC'
+	);
+$context['promos'] = Timber::get_posts($args);
+
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
 $context['menu_title'] = $menu_title;

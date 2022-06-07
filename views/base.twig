@@ -46,9 +46,15 @@
 			</main>
 		</section>
 
+		{% block intpromos %}
+			{% if not fn('is_front_page') %}
+				{# {% include 'int-promos/int-promos.1.twig' %} #}
+				{% include 'int-promos/int-promos.2.twig' %}
+			{% endif %}
+		{% endblock %}
 		
 		{% block footer %}
-			<footer id="footer">
+			<footer id="footer" role="contentinfo">
 				{# {% include 'footers/footer.1.twig' %} #}
 				{% include 'footers/footer.2.twig' %}
 			</footer>
