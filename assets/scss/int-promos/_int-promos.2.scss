@@ -1,24 +1,24 @@
 @use '../mixins' as *;
 @use '../globals' as *;
 
+/* This component will require setting content width to full page and making the sidebar large-3 (25% of the page width) */
+
 #int-promos {
-  background-color: hsl(204, 38%, 82%);
   #promos-wrapper {
-    max-width: $row-width;
+    max-width: none;
     margin: 0 auto;
-    padding: 3rem 0;
-    display: flex;
-    flex-direction: column;
-    @include breakpoint(medium) {
-      flex-direction: row;
-    }
+    padding: 0;
     .promo-box {
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
       text-align: center;
+      position: relative;
+      aspect-ratio: 1 / 1;
+      @include breakpoint(medium) {
+        min-height: 250px;
+      }
       &:is(:nth-child(2)) {
         padding: 2rem;
         @include breakpoint(medium) {
@@ -39,19 +39,16 @@
         font-weight: 300;
       }
       .photo {
-        aspect-ratio: 16 / 9;
         width: 100%;
-        max-width: 350px;
         overflow: hidden;
-        border: 3px solid var(--primary);
-        position: relative;
-        margin-bottom: 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-size: cover;
         background-position: center;
         transition: transform 0.2s ease;
-        &:focus {
-          transform: scale(1.1);
-        }
         &::after {
           content: '';
           position: absolute;
@@ -61,19 +58,39 @@
           left: 0;
           background-color: transparent;
           transition: $transition;
-          opacity: 0.2;
+          opacity: 0.5;
         }
         &:hover::after {
           background-color: var(--primary);
         }
-        &:hover {
-          transform: scale(1.05);
-        }
       }
-      h3 {
-        text-transform: uppercase;
-        margin: 0.5rem;
-        color: var(--primary);
+      &:nth-child(1) {
+          background-color: lighten($secondary, 10%);
+      }
+      &:nth-child(2) {
+          background-color: darken($secondary, 10%);
+      }
+      &:nth-child(3) {
+        background-color: lighten($secondary, 20%);
+      }
+      &:nth-child(4) {
+          background-color: $secondary;
+      }
+      .promo_text {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--light);
+        font-weight: 100;
+        pointer-events: none;
+        h3 {
+          color: var(--light);
+          font-weight: 100;
+          font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+          display: block;
+          text-transform: uppercase;
+          margin: 0.5rem;
+        }
       }
     }
   }

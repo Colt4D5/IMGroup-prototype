@@ -1,7 +1,9 @@
+{# This component will require setting content width to full page and making the sidebar large-3 (25% of the page width) #}
+
 <section id="int-promos" aria-label="Promos">
-  <div id="promos-wrapper">
-    {% for promo in promos %}
-        <div class="promo-box medium-4 columns">
+  <div id="promos-wrapper" class="row">
+    {% for promo in promos|slice(0, 4) %}
+        <div class="promo-box small-6 medium-3 columns">
             <a class="photo" href="{{ promo.promo_link }}" {% if promo.promo_target %} target="_blank" {% endif %} style="background-image: url({{ Image(promo.custom_promo_image).src }})">
               {# <img src="{% if promo.custom_promo %} {{ Image(promo.custom_promo_image).src }} {% endif %}" alt="" /> #}
             </a>

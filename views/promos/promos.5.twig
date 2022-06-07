@@ -3,7 +3,7 @@
 
 <section id="promos" aria-label="Promos">
   <div id="promos-wrapper" class="row">
-    {% for promo in promos %}
+    {% for promo in promos|slice(0, 3) %}
       {% if loop.index == 1 %}
         <div class="grid-col medium-6 columns">
           {% include 'components/promo-box.twig' %}
