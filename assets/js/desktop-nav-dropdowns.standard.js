@@ -1,3 +1,4 @@
+// /*
 // declare the things
 const links = document.querySelectorAll('#nav-main [data-link]');
 
@@ -37,3 +38,4 @@ function mouseOut(e) {
 
 // do the stuff
 initMenuLinks();
+// */
