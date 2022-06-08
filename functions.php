@@ -84,6 +84,7 @@ class StarterSite extends Timber\Site {
 		$context['twitter_url'] = get_option( 'twitter_url' );
 		$context['pinterest_url'] = get_option( 'pinterest_url' );
 		$context['yelp_url'] = get_option( 'yelp_url' );
+		$context['hours'] = get_option('hours');
 		$context['menu']  = new Timber\Menu( 'primary-menu' );
 		$context['services_menu']  = new Timber\Menu( 'services-menu' );
 		$context['about_menu']  = new Timber\Menu( 'about-menu' );
@@ -226,15 +227,15 @@ add_filter( 'wp_theme_editor_filetypes', 'add_custom_editor_file_types' );
 
 
 // Register our sidebars and widgetized areas.
-function arphabet_widgets_init() {
+function widgets_init() {
 
 	register_sidebar( array(
 		'name'          => 'Blog Sidebar',
 		'id'            => 'blog_sidebar',
 		'before_widget' => '<div class="blog-sidebar-item">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
@@ -242,8 +243,8 @@ function arphabet_widgets_init() {
 		'id'            => 'footer_column_1',
 		'before_widget' => '<div id="foot1">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
@@ -251,8 +252,8 @@ function arphabet_widgets_init() {
 		'id'            => 'footer_column_2',
 		'before_widget' => '<div id="foot2">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
@@ -260,8 +261,8 @@ function arphabet_widgets_init() {
 		'id'            => 'footer_column_3',
 		'before_widget' => '<div id="foot3">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
@@ -269,12 +270,12 @@ function arphabet_widgets_init() {
 		'id'            => 'footer_column_4',
 		'before_widget' => '<div id="foot4">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
 	) );
 
 }
-add_action( 'widgets_init', 'arphabet_widgets_init' );
+add_action( 'widgets_init', 'widgets_init' );
 
 
 

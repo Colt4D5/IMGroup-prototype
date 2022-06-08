@@ -18,7 +18,6 @@ if ( ! isset( $timberContext ) ) {
 $timberContext['content'] = ob_get_contents();
 ob_end_clean();
 $context['current_url'] = Timber\URLHelper::get_current_url();
-$context['footer_column_1'] = Timber::get_widgets( 'footer_column_1' );
 $context['info'] = Timber\URLHelper::get_host();
 $templates = array( 'page-plugin.twig', 'page-home.twig', 'page.twig', 'single-locations.twig', 'template-full-width.twig' );
 Timber::render( $templates, $timberContext );
