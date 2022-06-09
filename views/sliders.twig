@@ -4,12 +4,9 @@
 		<div class="swiper-wrapper">
 			<!-- Slides -->
 			{% for header in headers %}
-				{% if header.is_holiday_slide == 0 %}
+				{% if header.is_holiday_slide == 0 %} {# if is NOT a holiday slide #}
 					{% set desktop_img = TimberImage(header.slide_background_image).src %}
 					{% set mobile_img = TimberImage(header.background_image_mobile).src %}
-
-					{# DESKTOP HEADER #}
-					{# <div class="swiper-slide" style="background-image: url({{ desktop_img }});" data-desktop-url="{{ desktop_img }}" data-mobile-url="{{ mobile_img }}" > #}
 
 					<div class="swiper-slide">
 
