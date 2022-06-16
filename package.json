@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "sync": "browser-sync start --proxy 'imgroup-theme.local' --files '[assets/css/**/*.css, assets/js/**/*.js]'",
-    "start": "sass --watch assets/scss:assets/css --style=compressed & npx postcss assets/css/**/*.css --use autoprefixer -d assets/css -w & browser-sync start --proxy 'imgroup-theme.local' --files 'assets/css/**/*.css'"
+    "start": "sass --no-error-css --watch assets/scss:assets/css --style=compressed & npx postcss assets/css/**/*.css --use autoprefixer -d assets/css -w & browser-sync start --proxy 'imgroup-theme.local' --files 'assets/css/**/*.css'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

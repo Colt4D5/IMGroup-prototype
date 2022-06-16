@@ -1,40 +1,40 @@
-	<!-- Slider main container -->
-	<div id="headerimage" class="swiper mySwiper">
-		<!-- Additional required wrapper -->
-		<div class="swiper-wrapper">
-			<!-- Slides -->
-			{% for header in headers %}
-				{% if header.is_holiday_slide == 0 %} {# if is NOT a holiday slide #}
-					{% set desktop_img = TimberImage(header.slide_background_image).src %}
-					{% set mobile_img = TimberImage(header.background_image_mobile).src %}
+<!-- Slider main container -->
+<div id="headerimage" class="swiper mySwiper">
+	<!-- Additional required wrapper -->
+	<div class="swiper-wrapper">
+		<!-- Slides -->
+		{% for header in headers %}
+			{% if header.is_holiday_slide == 0 %} {# if is NOT a holiday slide #}
+				{% set desktop_img = TimberImage(header.slide_background_image).src %}
+				{% set mobile_img = TimberImage(header.background_image_mobile).src %}
 
-					<div class="swiper-slide">
+				<div class="swiper-slide">
 
-						<picture>
-							<source media="(max-width: 799px)" srcset="{{ mobile_img }}">
-							<source media="(min-width: 800px)" srcset="{{ desktop_img }}">
-							<img src="{{ desktop_img }}" alt="Alt Tag" />
-						</picture>
+					<picture>
+						<source media="(max-width: 799px)" srcset="{{ mobile_img }}">
+						<source media="(min-width: 800px)" srcset="{{ desktop_img }}">
+						<img src="{{ desktop_img }}" alt="Alt Tag" />
+					</picture>
 
 
-					{% if header.slide_text %}
-						<div class="slide_text">
-							<div class="slide_text_inner">
-								{{ header.slide_text }}
-							</div>
+				{% if header.slide_text %}
+					<div class="slide_text">
+						<div class="slide_text_inner">
+							{{ header.slide_text }}
 						</div>
-					{% endif %}
 					</div>
 				{% endif %}
-			{% endfor %}
-		</div>
-		<!-- pagination -->
-		<div class="swiper-pagination"></div>
-
-		<!-- navigation buttons -->
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
-
-		<!-- scrollbar -->
-		{# <div class="swiper-scrollbar"></div> #}
+				</div>
+			{% endif %}
+		{% endfor %}
 	</div>
+	<!-- pagination -->
+	<div class="swiper-pagination"></div>
+
+	<!-- navigation buttons -->
+	<div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
+
+	<!-- scrollbar -->
+	{# <div class="swiper-scrollbar"></div> #}
+</div>

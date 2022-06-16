@@ -99,21 +99,6 @@ body.accessibility-enabled a:focus {
 	background-size: cover;
 }
 
-a.button, input#searchsubmit, input[type=submit] {
-  background-color: var(--primary);
-  padding: 0.75rem 1.5rem;
-  color: var(--light);
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  &:hover {
-    background-color: var(--secondary);
-  }
-}
-
 .content-wrapper {
   min-height: 400px;
 }

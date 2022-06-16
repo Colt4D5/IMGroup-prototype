@@ -30,6 +30,8 @@ if ( get_field('that_sidebar' )) {
 
 $context = Timber::context();
 
+$context['custom_header'] = get_field('custom_header');
+
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
 $context['menu_title'] = $menu_title;

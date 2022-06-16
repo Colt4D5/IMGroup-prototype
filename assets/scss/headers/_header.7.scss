@@ -184,11 +184,11 @@ header {
             font-size: clamp(1.75rem, 3.25vw, 3.5rem);
           }
         }
-        .button {
-          text-decoration: none;
-          font-size: clamp(1rem, 2vw, 1.25rem);
-          font-weight: 100;
-        }
+        // .button {
+        //   text-decoration: none;
+        //   font-size: clamp(1rem, 2vw, 1.25rem);
+        //   font-weight: 100;
+        // }
       }
     }
     .swiper-button-next, .swiper-button-prev {
@@ -203,6 +203,7 @@ header {
       }
     }
     .swiper-pagination {
+      bottom: 4rem;
       .swiper-pagination-bullet-active {
         background: var(--secondary);
       }

@@ -23,6 +23,23 @@ if ( get_field('that_sidebar' )) {
 }
 
 $context = Timber::context();
+
+// default headers
+$imgset_collection = get_option('imageset_collection');
+if ( $imgset_collection == 'aveda' ) {
+	$imgset_category = get_option('aveda_collection');
+} elseif ( $imgset_collection == 'stock' ) {
+	$imgset_category = get_option('stock_collection');
+} else {
+	$imgset_category = get_option('aveda_collection');
+}
+$default_img_url = 'https://imaginalhosting.com/wp-themes/images/img/'. $imgset_collection . '/' . $imgset_category;
+
+$data = file_get_contents($default_img_url.'.json'); // put the contents of the file into a variable
+
+$header_image_array = json_decode($data, true);
+$context['preset_header'] = $default_img_url . '/001.jpg';
+
 $context['posts'] = new Timber\PostQuery();
 $context['sidebar'] = Timber::get_sidebar('sidebar.twig');
 $context['menu_title'] = $menu_title;

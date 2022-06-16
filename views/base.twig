@@ -25,8 +25,8 @@
 				{# {% include 'headers/header.2.twig' %} #}
 				{# {% include 'headers/header.3.twig' %} #}
 				{# {% include 'headers/header.5.twig' %} #}
-				{# {% include 'headers/header.6.twig' %} #}
-				{% include 'headers/header.7.twig' %}
+				{% include 'headers/header.6.twig' %}
+				{# {% include 'headers/header.7.twig' %} #}
 			{% endblock %}
 		</header>
 
@@ -51,9 +51,9 @@
 		
 		{% block footer %}
 			<footer id="footer" role="contentinfo">
-				{# {% include 'footers/footer.1.twig' %} #}
+				{% include 'footers/footer.1.twig' %}
 				{# {% include 'footers/footer.2.twig' %} #}
-				{% include 'footers/footer.3.twig' %}
+				{# {% include 'footers/footer.3.twig' %} #}
 			</footer>
 		{% endblock %}
 		{{ function('wp_footer') }}

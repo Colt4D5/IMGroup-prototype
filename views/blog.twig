@@ -2,7 +2,7 @@
 
 {% block header %}
 	{{ parent() }}
-	{% include 'components/headerimage.1.twig' %}
+	{% include 'components/headerimage.1.twig' with {'default_img': default_img_url} %}
 {% endblock %}
 
 {% block content %}

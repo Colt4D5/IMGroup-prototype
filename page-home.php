@@ -32,6 +32,7 @@ $args = array(
 	'order' => 'ASC'
 	);
 $context['headers'] = Timber::get_posts($args);
+// echo '<pre>' . var_dump($context['headers']) . '</pre>';
 
 wp_reset_query();
 

@@ -1,4 +1,11 @@
-{% set bg_img = Image(post.page_title_image).src %}
+{% if custom_header == 1 %}
+  {% set bg_img = Image(post.page_title_image).src %}
+{% elseif default_img %}
+  {% set bg_img = default_img %}
+{% else %}
+  {% set bg_img = preset_header %}
+{% endif %}
+
 {% set color_scheme = '' %}
 {% set gradient = '' %}
 {% if post.header_color_scheme == 'dark' %}
@@ -10,8 +17,4 @@
   {% set gradient = ' dark-gradient' %}
 {% endif %}
 
-{% if bg_img %}
-  <div id="headerimage" style="background-image: url({{ bg_img }})" class="{{ post.header_align }}{{ color_scheme }}{{ gradient }}"></div>
-{% else %}
-  <div id="headerimage" style="background-image: url(https://imaginalhosting.com/wp-themes/images/img/aveda/behindthescenes/001.jpg)" class="{{ post.header_align }}{{ color_scheme }}{{ gradient }}"></div>
-{% endif %}
+<div id="headerimage" style="background-image: url({{ bg_img }})" class="{{ post.header_align }}{{ color_scheme }}{{ gradient }}"></div>

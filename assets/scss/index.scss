@@ -1,15 +1,22 @@
 ///////// global stuff /////////
+@forward 'fonts';
 @forward 'mixins';
 @forward 'globals';
 @forward 'foundation';
+
+///////// button stuff /////////
+@forward './buttons/button.1'; // simple block btn
+// @forward './buttons/button.2'; // simple rounded pill-shaped btn
+// @forward './buttons/button.3'; // simple bg fade in button
+// @forward './buttons/button.3'; // bg slide-in button
 
 ///////// header stuff /////////
 // @forward './headers/header.1';
 // @forward './headers/header.2';
 // @forward './headers/header.3';
 // @forward './headers/header.5';
-// @forward './headers/header.6';
-@forward './headers/header.7';
+@forward './headers/header.6';
+// @forward './headers/header.7';
 
 //// header effects & stuff ////
 // @forward './headers/header-effects/header-effect.rolldown.scss/';
@@ -20,17 +27,20 @@
 ///////// promos stuff /////////
 // @forward './promos/promos.1';
 // @forward './promos/promos.2';
-@forward './promos/promos.3';
+// @forward './promos/promos.3';
 // @forward './promos/promos.4';
 // @forward './promos/promos.5';
 // @forward './promos/promos.6';
 // @forward './promos/promos.7';
 // @forward './promos/promos.8';
-// @forward './promos/promos.9';
+@forward './promos/promos.9';
 
 ///////// intro stuff /////////
-// @forward './intros/intro.1';
-@forward './intros/intro.2';
+@forward './intros/intro.1';
+// @forward './intros/intro.2';
+
+/////// homeblock stuff ///////
+@forward './homeblocks/homeblock.1'; 
 
 ///////// instagram feed stuff /////////
 @forward 'ig-feed';
@@ -52,13 +62,13 @@
 @forward 'team';
 
 ///////// footer stuff /////////
-// @forward './footers/footer.1';
+@forward './footers/footer.1';
 // @forward './footers/footer.2';
-@forward './footers/footer.3';
+// @forward './footers/footer.3';
 
 ///////// mobile menu stuff /////////
-// @forward 'mobile-menu.1';
-@forward 'mobile-menu.2';
+// @forward './mobile-menus/mobile-menu.1';
+@forward './mobile-menus/mobile-menu.2';
 
 ///////// dark mode stuff /////////
 @forward 'dark-mode';

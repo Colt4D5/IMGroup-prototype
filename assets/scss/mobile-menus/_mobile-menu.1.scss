@@ -1,5 +1,5 @@
-@use 'mixins' as *;
-@use 'globals' as *;
+@use '../mixins' as *;
+@use '../globals' as *;
 
 #mobile-menu {
   position: fixed;
