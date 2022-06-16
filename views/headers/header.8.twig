@@ -1,0 +1,17 @@
+<div id="top-bar">
+	<div class="inner">
+		<a href="/">
+			<img id="logo" src="{{ main_logo_url }}" alt="Logo | Some City, NA" />
+		</a>
+		<div id="nav-wrapper">
+			<nav id="nav-main" role="navigation">
+				{% include "menu.twig" with {'items': menu.get_items} %}
+			</nav><!-- #nav -->
+			<div id="menuicon"><i class="fa-solid fa-bars"></i></div>
+		</div>
+
+	</div>
+	<div id="morelinks">
+		<p><b>Location Name: </b><a href="tel:+1555_555_5555">555.555.5555</a></p>
+	</div>
+</div>

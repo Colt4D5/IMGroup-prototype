@@ -1,0 +1,204 @@
+@use '../_mixins' as *;
+@use '../_globals' as *;
+
+header {
+  #top-bar {
+    background-color: transparent;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    max-width: 78rem;
+    margin: 0 auto;
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 1.5rem 0;
+      margin: 0 auto;
+      position: relative;
+      @include breakpoint(large) {
+        justify-content: space-between;
+      }
+      #logo{
+        // remove filter if logo is black or not black/white or stuff, idk
+        filter: invert(0.6);
+        max-width: 125px;
+      }
+      #nav-wrapper {
+        nav {
+          display:none;
+          @include breakpoint(large) {
+            display: flex;
+          }
+          ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            li {
+              position: relative;
+              a {
+                font-size: 1.25rem;
+                padding: 0.7rem 0.5rem;
+                color: var(--dark);
+                text-decoration: none;
+                font-weight: 200;
+                &:hover {
+                  color: var(--secondary);
+                }
+              }
+              &.cta > a {
+                background-color: transparent;
+                border: 2px solid $dark;
+                color: $dark;
+                margin-left: 0.25em;
+                &:focus {
+                  outline: 3px solid var(--primary);
+                }
+              }
+              &.cta:hover > a {
+                color: $light;
+                background-color: $dark;
+              }
+              ul.is_subnav {
+                position: absolute;
+                transition: opacity 0.2s ease;
+                opacity: 0;
+                padding: 0.5rem;
+                top: 100%;
+                left: 0;
+                align-items: flex-start;
+                pointer-events: none;
+                transition-delay: 0.3s;
+                flex-direction: column;
+                background-color: rgba(94, 131, 156, 0.6);
+                z-index: 3;
+                &.is_open {
+                  opacity: 1;
+                  pointer-events: auto;
+                  transition-delay: 0s;
+                  
+                }
+                a {
+                  text-transform: none;
+                  white-space: nowrap;
+                  padding: 0.25em;
+                  color: var(--light);
+                  &:hover {
+                    color: darken($light, 15%);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }
+      
+      #menuicon {
+        position: relative;
+        transform: translateY(-50%);
+        cursor: pointer;
+        @include breakpoint(large) { display: none; }
+        i {
+          color: var(--primary);
+          transition: $transition;
+          font-size: 2rem;
+          padding: 0.25em;
+          cursor: pointer;
+          &:hover {
+            color: var(--secondary);
+          }
+        }
+      }
+    }
+    #morelinks {
+      p {
+        text-align: center;
+        text-transform: uppercase;
+        a {
+          color: var(--dark);
+          text-decoration: none;
+          &.phone {
+            font-weight: 100;
+          }
+          &:hover {
+            color: var(--secondary);
+          }
+        }
+      }
+    }
+  }
+
+  #headerimage {
+    height: 575px;
+    max-width: 78rem;
+    margin: 0 1rem;
+    overflow: hidden;
+    @include breakpoint(medium) {
+      margin: 0 1rem;
+    }
+    @include breakpoint(large) {
+      height: 450px;
+    }
+    @include breakpoint(xlarge) {
+      margin: 0 auto;
+    }
+    .swiper-slide {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      .slide_text {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 3rem;
+        width: 100%;
+        text-align: center;
+        @include breakpoint(large) {
+          bottom: 50%;
+          transform: translateY(50%);
+          left: 15%;
+          width: auto;
+          text-align: left;
+        }
+        h2 {
+          text-transform: uppercase;
+          font-weight: 100;
+          letter-spacing: 2px;
+          line-height: 1.2;
+          margin-bottom: 0.3em;
+          font-size: 1.75rem;
+          @include breakpoint(large) {
+            font-size: clamp(1.75rem, 3.25vw, 3.5rem);
+          }
+        }
+        .button {
+          text-decoration: none;
+          font-size: clamp(1rem, 2vw, 1.25rem);
+          font-weight: 100;
+        }
+      }
+    }
+    .swiper-button-next, .swiper-button-prev {
+      display: none;
+      color: #ccc;
+      opacity: 0.3;
+      mix-blend-mode: difference;
+      &::after {
+        font-size: 1.5rem;
+        @include breakpoint(large) {
+          font-size: 2rem;
+        }
+      }
+    }
+    .swiper-pagination {
+      .swiper-pagination-bullet-active {
+        background: var(--secondary);
+      }
+    }
+  }
+
+}

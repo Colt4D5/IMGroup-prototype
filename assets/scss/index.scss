@@ -15,8 +15,9 @@
 // @forward './headers/header.2';
 // @forward './headers/header.3';
 // @forward './headers/header.5';
-@forward './headers/header.6';
+// @forward './headers/header.6';
 // @forward './headers/header.7';
+@forward './headers/header.8';
 
 //// header effects & stuff ////
 // @forward './headers/header-effects/header-effect.rolldown.scss/';
@@ -46,7 +47,7 @@
 @forward 'ig-feed';
 
 ///////// interior headerimage stuff /////////
-@forward 'headerimage.1';
+@forward './headerimages/headerimage.1';
 
 ///////// interior content stuff /////////
 @forward 'interior';

@@ -76,8 +76,8 @@
 
   i.fa-xmark {
     position: absolute;
-    right: 3rem;
-    top: 5rem;
+    right: 2.25rem;
+    top: 3.25rem;
     font-size: 2rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(.39,-0.33,1,1.61);
@@ -102,7 +102,10 @@
 
 body.mobile-menu-open {
   #mobile-menu {
-    clip-path: ellipse(175vw 175vw at 100% 0%);
+    clip-path: ellipse(1200px 1200px at 100% 0%);
+    @include breakpoint(medium) {
+      clip-path: ellipse(175vw 175vw at 100% 0%);
+    }
   }
 
   #mobile-overlay {
