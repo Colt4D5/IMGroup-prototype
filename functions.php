@@ -85,6 +85,7 @@ class StarterSite extends Timber\Site {
 		$context['pinterest_url'] = get_option( 'pinterest_url' );
 		$context['yelp_url'] = get_option( 'yelp_url' );
 		$context['hours'] = get_option('hours');
+		$context['acomm_popup'] = get_option('acomm_popup');
 		$context['menu']  = new Timber\Menu( 'primary-menu' );
 		$context['services_menu']  = new Timber\Menu( 'services-menu' );
 		$context['about_menu']  = new Timber\Menu( 'about-menu' );

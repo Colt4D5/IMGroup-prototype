@@ -23,11 +23,11 @@
 			{% block header %}
 				{# {% include 'headers/header.1.twig' %} #}
 				{# {% include 'headers/header.2.twig' %} #}
-				{# {% include 'headers/header.3.twig' %} #}
+				{% include 'headers/header.3.twig' %}
 				{# {% include 'headers/header.5.twig' %} #}
 				{# {% include 'headers/header.6.twig' %} #}
 				{# {% include 'headers/header.7.twig' %} #}
-				{% include 'headers/header.8.twig' %}
+				{# {% include 'headers/header.8.twig' %} #}
 			{% endblock %}
 		</header>
 
@@ -58,5 +58,8 @@
 			</footer>
 		{% endblock %}
 		{{ function('wp_footer') }}
+		{% if acomm_popup %}
+			{{ acomm_popup }}
+		{% endif %}
 	</body>
 </html>

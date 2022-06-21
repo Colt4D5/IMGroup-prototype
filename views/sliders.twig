@@ -7,8 +7,13 @@
 			{% if header.is_holiday_slide == 0 %} {# if is NOT a holiday slide #}
 				{% set desktop_img = TimberImage(header.slide_background_image).src %}
 				{% set mobile_img = TimberImage(header.background_image_mobile).src %}
+				{% if header.has_gradient_header == 1 %}
+					{% set gradient = header.gradient_header_option %}
+				{% else %}
+					{% set gradient = '' %}
+				{% endif %}
 
-				<div class="swiper-slide">
+				<div class="swiper-slide {{ gradient }}">
 
 					<picture>
 						<source media="(max-width: 799px)" srcset="{{ mobile_img }}">
