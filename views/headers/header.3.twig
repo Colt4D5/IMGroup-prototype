@@ -1,10 +1,10 @@
 	<div id="top-bar" class="">
 		<div class="inner">
 			<a href="/">
-				<img id="logo" src="{{ main_logo_url }}" alt="Logo | Some City, NA" />
+				<img id="logo" src="{{ main_logo_url }}" alt="{{ site.name }} | {{ site.description }}" />
 			</a>
 			<div id="nav-wrapper">
-				<nav id="nav-main" role="navigation">
+				<nav id="nav-main">
 					{% include "menu.twig" with {'items': menu.get_items} %}
 				</nav><!-- #nav -->
 					<div id="morelinks">

@@ -5,9 +5,9 @@
 	<div id="top-bar">
 		<div class="inner">
 			<a href="/">
-				<img id="logo" src="{{ main_logo_url }}" alt="Logo | Some City, NA" width="125" height="112" />
+				<img id="logo" src="{{ main_logo_url }}" alt="{{ site.name }} | {{ site.description }}" width="125" height="112" />
 			</a>
-			<nav id="nav-main" class="show-for-large" role="navigation">
+			<nav id="nav-main" class="show-for-large">
 				{% include "menu.twig" with {'items': menu.get_items} %}
 			</nav><!-- #nav -->
 			<div id="menuicon"><i class="fa-solid fa-bars"></i></div>

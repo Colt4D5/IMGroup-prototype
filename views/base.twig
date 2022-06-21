@@ -10,6 +10,13 @@
 	{% set color_scheme = ' ' ~ post.header_color_scheme ~ '-scheme' %}
 {% endif %}
 
+{# Adds home class if is home page or holiday home page #}
+{% if fn('is_front_page') or function('is_page', 1442) %}
+	{% set home_class = 'home ' %}
+{% else %}
+	{% set home_class = 'row ' %}
+{% endif %}
+
 	<body class="{{ body_class }}" data-template="base.twig">
 
 		<div id="cursor"></div>
@@ -31,7 +38,7 @@
 			{% endblock %}
 		</header>
 
-		<section id="content" aria-label="body content" class="{% if fn('is_front_page') or function('is_page', 1442) %}home {% endif %}content-wrapper{% if not fn('is_front_page') and not function('is_page', 1442) %} row{% endif %}" aria-labelledby="title">
+		<main id="content" aria-label="body content" class="{{ home_class }}content-wrapper">
 			{% if sidebar %}
 				<aside id="sidebar" class="sidebar sidebar-wrapper large-4 medium-12 columns {{ post.id }}-sidebar" role="complementary" data-equalizer-watch>
 					{% block sidebar %}
@@ -40,20 +47,20 @@
 				</aside>
 			{% endif %}
 			{# {% if title %}<h1 id="title">{{title}}</h1>{% endif %} #}
-			<main class="wrapper {% if sidebar %}large-8 columns{% endif %}">
+			<section class="wrapper {% if sidebar %}large-8 columns{% endif %}">
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
-			</main>
-		</section>
+			</section>
+		</main>
 
 		{% block intpromos %}
 		{% endblock %}
 		
 		{% block footer %}
 			<footer id="footer" role="contentinfo">
-				{% include 'footers/footer.1.twig' %}
-				{# {% include 'footers/footer.2.twig' %} #}
+				{# {% include 'footers/footer.1.twig' %} #}
+				{% include 'footers/footer.2.twig' %}
 				{# {% include 'footers/footer.3.twig' %} #}
 			</footer>
 		{% endblock %}

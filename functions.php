@@ -242,7 +242,7 @@ function widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Footer Column 1',
 		'id'            => 'footer_column_1',
-		'before_widget' => '<div id="foot1">',
+		'before_widget' => '<div class="foot-column">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4>',
 		'after_title'   => '</h4>',
@@ -251,7 +251,7 @@ function widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Footer Column 2',
 		'id'            => 'footer_column_2',
-		'before_widget' => '<div id="foot2">',
+		'before_widget' => '<div class="foot-column">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4>',
 		'after_title'   => '</h4>',
@@ -260,7 +260,7 @@ function widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Footer Column 3',
 		'id'            => 'footer_column_3',
-		'before_widget' => '<div id="foot3">',
+		'before_widget' => '<div class="foot-column">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4>',
 		'after_title'   => '</h4>',
@@ -269,7 +269,7 @@ function widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Footer Column 4',
 		'id'            => 'footer_column_4',
-		'before_widget' => '<div id="foot4">',
+		'before_widget' => '<div class="foot-column">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4>',
 		'after_title'   => '</h4>',

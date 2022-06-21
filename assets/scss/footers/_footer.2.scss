@@ -20,8 +20,10 @@ footer {
       }
       #foot1 {
         font-weight: 300;
-        p {
-          margin: 0;
+        .foot-column {
+          p {
+            margin: 0;
+          }
         }
       }
       a {
