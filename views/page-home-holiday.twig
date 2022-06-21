@@ -16,10 +16,12 @@
 	{# {% include 'promos/promos.7.twig' %} #}
 	{% include 'promos/promos.8.twig' %}
 	{# {% include 'promos/promos.9.twig' %} #}
-	<div id="intro">
-				{# <h1 class="article-h1">{{post.title}}</h1> #}
-				<div class="intro-wrapper">
-					{{post.get_content}}
-				</div>
-	</div>
+
+	{% include 'homeblocks/homeblock.1.twig' %}
+
+	{% include 'intros/intro.1.twig' %}
+	{# {% include 'intros/intro.2.twig' %} #}
+
+	{% include 'components/ig-feed.twig' %}
+	
 {% endblock %}
