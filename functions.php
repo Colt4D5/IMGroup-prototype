@@ -54,6 +54,7 @@ class StarterSite extends Timber\Site {
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_filter( 'wp_theme_editor_filetypes', array($this, 'add_custom_editor_file_types') );
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -96,6 +97,14 @@ class StarterSite extends Timber\Site {
 		$context['footer_column_2'] = Timber::get_widgets( 'footer_column_2' );
 		$context['footer_column_3'] = Timber::get_widgets( 'footer_column_3' );
 		$context['footer_column_4'] = Timber::get_widgets( 'footer_column_4' );
+		$context['imgset_collection'] = get_option('imageset_collection');
+		if ($context['imgset_collection'] === 'aveda') {
+			$context['imgset_category'] = get_option('aveda_collection');
+		} elseif ($context['imgset_collection'] === 'stock') {
+			$context['imgset_category'] = get_option('stock_collection');
+		} else {
+			$context['imgset_category'] = get_option('aveda_collection');
+		}
 		$context['site']  = $this;
 		return $context;
 	}
@@ -154,6 +163,12 @@ class StarterSite extends Timber\Site {
 		add_theme_support( 'menus' );
 	}
 
+	// adds twig files to theme editor
+	public function add_custom_editor_file_types( $types ) {
+		$types[] = 'twig';
+		return $types;
+	}
+
 	/** This Would return 'foo bar!'.
 	 *
 	 * @param string $text being 'foo', then returned 'foo bar!'.
@@ -174,129 +189,25 @@ class StarterSite extends Timber\Site {
 	}
 
 }
-
-
 new StarterSite();
 
+// connect to cloudinary
+require_once(get_template_directory().'/assets/functions/cloudinary.php');
+
+// promos & stuff
+require_once(get_template_directory().'/assets/functions/promos.php');
 
 // register menus
-function register_theme_menus () {
-	register_nav_menus( [
-			'primary-menu' 		=> 'Primary Menu',
-			'services-menu' 		=> 'Services Menu',
-			'about-menu' 		=> 'About Menu',
-			'locations-menu'	=> 'Locations Menu',
-			'aveda-menu'	=> 'Aveda Menu',
-			'footer-menu'	 		=> 'Footer Menu' 
-	] );
-}
-add_action( 'init', 'register_theme_menus' );
-
+require_once(get_template_directory().'/assets/functions/register-menus.php');
 
 // enqueue all css files in assets/css folder
-function add_custom_assets() {
-  foreach( glob( get_template_directory(). '/assets/css/*.css' ) as $file ) {
-    $file = str_replace(get_template_directory(), '', $file);
-    // $file contains the name and extension of the file
-    wp_register_style( $file.'style', get_template_directory_uri() . $file, array(), false, 'all' );
-    wp_enqueue_style( $file . 'style' );
-  }
-
-
-// enqueue all js files in assets/js folder
-  foreach( glob( get_template_directory(). '/assets/js/*.js' ) as $file ) {
-  $file = str_replace(get_template_directory(), '', $file);
-  // $file contains the name and extension of the file
-  wp_register_script( $file . 'script', get_template_directory_uri() . $file, [],'1.0.0', true);
-
-	wp_enqueue_script( $file . 'script' );
-  }
-}
-add_action('wp_enqueue_scripts', 'add_custom_assets');
-
-
-
-
-// adds twig files to theme editor
-function add_custom_editor_file_types( $types ) {
-    $types[] = 'twig';
-    return $types;
-}
-add_filter( 'wp_theme_editor_filetypes', 'add_custom_editor_file_types' );
-
-
-
+require_once(get_template_directory().'/assets/functions/enqueue-theme-assets.php');
 
 // Register our sidebars and widgetized areas.
-function widgets_init() {
-
-	register_sidebar( array(
-		'name'          => 'Blog Sidebar',
-		'id'            => 'blog_sidebar',
-		'before_widget' => '<div class="blog-sidebar-item">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name'          => 'Footer Column 1',
-		'id'            => 'footer_column_1',
-		'before_widget' => '<div class="foot-column">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name'          => 'Footer Column 2',
-		'id'            => 'footer_column_2',
-		'before_widget' => '<div class="foot-column">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name'          => 'Footer Column 3',
-		'id'            => 'footer_column_3',
-		'before_widget' => '<div class="foot-column">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name'          => 'Footer Column 4',
-		'id'            => 'footer_column_4',
-		'before_widget' => '<div class="foot-column">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>',
-	) );
-
-}
-add_action( 'widgets_init', 'widgets_init' );
-
-
+require_once(get_template_directory().'/assets/functions/register-widgets.php');
 
 // Dequeue Gutenberg Block Library from loading client-side
-function remove_gb_block_styles() {
-	wp_dequeue_style( 'wp-block-library' );
-	wp_dequeue_style( 'wp-block-library-theme' );
-}
-add_action( 'wp_enqueue_scripts', 'remove_gb_block_styles', 100 );
+require_once(get_template_directory().'/assets/functions/dequeue-scripts.php');
 
-
-/*****************************************
-***  Hide Draft Pages from the menu    ***
-*****************************************/
-function filter_draft_pages_from_menu ($items, $args) {
-	foreach ($items as $ix => $obj) {
-		if (!is_user_logged_in () && 'publish' != get_post_status($obj->object_id)) {
-			unset ($items[$ix]);
-		}
-	}
-	return $items;
-}
-add_filter ('wp_nav_menu_objects', 'filter_draft_pages_from_menu', 10, 2);
+// remove drafted pages from navigation
+require_once(get_template_directory().'/assets/functions/hide-draft-pages.php');

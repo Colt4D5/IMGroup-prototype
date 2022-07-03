@@ -21,6 +21,9 @@ if ( get_field('that_sidebar' )) {
 $context = Timber::context();
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
+
+$context['custom_header'] = get_field('custom_header');
+
 $context['menu_title'] = $menu_title;
 $context['current_menu'] = $menu_title . '_menu';
 $context['sidebar'] = Timber::get_sidebar('sidebar.twig');

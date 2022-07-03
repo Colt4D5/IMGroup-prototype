@@ -30,6 +30,8 @@ if ( get_field('that_sidebar' )) {
 
 $context = Timber::context();
 
+
+// if "Custom Header" is checked, use the image set in the "Custom Header" field.
 $context['custom_header'] = get_field('custom_header');
 
 $timber_post = new Timber\Post();

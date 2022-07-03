@@ -18,6 +18,8 @@ if (is_archive() || is_author() || is_category() || is_home() || is_single() || 
   $menu_title = 'about';
 }
 
+$context['custom_header'] = get_field('custom_header');
+
 $templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 
 $context          = Timber::context();

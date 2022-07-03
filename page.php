@@ -13,24 +13,21 @@ if ( get_field('that_sidebar' )) {
 }
 
 $context = Timber::context();
+$timber_post = new Timber\Post();
+$context['post'] = $timber_post;
 
 $context['custom_header'] = get_field('custom_header');
 
-// default headers
-$imgset_collection = get_option('imageset_collection');
-if ( $imgset_collection == 'aveda' ) {
-	$imgset_category = get_option('aveda_collection');
-} elseif ( $imgset_collection == 'stock' ) {
-	$imgset_category = get_option('stock_collection');
-} else {
-	$imgset_category = get_option('aveda_collection');
-}
-$default_img_url = 'https://imaginalhosting.com/wp-themes/images/img/'. $imgset_collection . '/' . $imgset_category;
 
-$data = file_get_contents($default_img_url.'.json'); // put the contents of the file into a variable
+//$data = file_get_contents($default_img_url.'.json'); // put the contents of the file into a variable
 
-$header_image_array = json_decode($data, true);
-$context['preset_header'] = $default_img_url . '/' . $header_image_array[get_field('page_preset_header')]['image'];
+// query cloudinary api
+// $cloudinary_images = $cloudinary->searchApi()
+// ->expression('resource_type=image AND folder:' . $imgset_collection . '/' . $imgset_category)
+// ->maxResults(1)
+// ->execute();
+
+// $total_count = $cloudinary_images["total_count"];
 
 $args = array(
 	'post_type' => 'promo_btn',
@@ -40,8 +37,6 @@ $args = array(
 );
 $context['promos'] = Timber::get_posts($args);
 
-$timber_post = new Timber\Post();
-$context['post'] = $timber_post;
 $context['menu_title'] = $menu_title;
 $context['current_menu'] = $menu_title . '_menu';
 $context['sidebar'] = Timber::get_sidebar('sidebar.twig');

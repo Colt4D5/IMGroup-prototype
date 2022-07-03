@@ -18,6 +18,8 @@ if (is_archive() || is_author() || is_category() || is_home() || is_single() || 
   $menu_title = 'about';
 }
 
+$context['custom_header'] = get_field('custom_header');
+
 $context         = Timber::context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;

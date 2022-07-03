@@ -27,6 +27,8 @@ $templates = array( 'archive.twig', 'index.twig' );
 
 $context = Timber::context();
 
+$context['custom_header'] = get_field('custom_header');
+
 $context['title'] = 'Archive';
 if ( is_day() ) {
 	$context['title'] = 'Day: ' . get_the_date( 'D M Y' );

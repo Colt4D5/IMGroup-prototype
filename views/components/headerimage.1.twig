@@ -1,9 +1,9 @@
-{% if custom_header == 1 %}
+{% if custom_header == 1 %} {# if custom header checkbox is selected #}
   {% set bg_img = Image(post.page_title_image).src %}
-{% elseif default_img %}
-  {% set bg_img = default_img %}
-{% else %}
-  {% set bg_img = preset_header %}
+{% else %} {# if custom header checkbox is NOT selected #}
+  {% set img_name = post.page_preset_header < 10 ? '00' ~ (post.page_preset_header + 1) : '0' ~ (post.page_preset_header + 1) %}
+  {% set url = 'https://res.cloudinary.com/imaginal-marketing-group/image/upload/' ~ imgset_collection ~ '/' ~ imgset_category ~ '/' ~ img_name %}
+  {% set bg_img = url %}
 {% endif %}
 
 {% set color_scheme = '' %}

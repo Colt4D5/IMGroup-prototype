@@ -18,4 +18,7 @@ if ( isset( $wp_query->query_vars['author'] ) ) {
 	$context['author'] = $author;
 	$context['title']  = 'Author Archives: ' . $author->name();
 }
+
+$context['custom_header'] = get_field('custom_header');
+
 Timber::render( array( 'author.twig', 'archive.twig' ), $context );
