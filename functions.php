@@ -197,6 +197,9 @@ require_once(get_template_directory().'/assets/functions/cloudinary.php');
 // promos & stuff
 require_once(get_template_directory().'/assets/functions/promos.php');
 
+// homepage slides & stuff
+require_once(get_template_directory().'/assets/functions/cpt.php');
+
 // register menus
 require_once(get_template_directory().'/assets/functions/register-menus.php');
 

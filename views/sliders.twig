@@ -4,9 +4,19 @@
 	<div class="swiper-wrapper">
 		<!-- Slides -->
 		{% for header in headers %}
+
 			{% if header.is_holiday_slide == 0 %} {# if is NOT a holiday slide #}
-				{% set desktop_img = TimberImage(header.slide_background_image).src %}
-				{% set mobile_img = TimberImage(header.background_image_mobile).src %}
+				{% if header.custom_home_header == 0 %}
+					{% set url = 'https://res.cloudinary.com/imaginal-marketing-group/image/upload/' ~ imgset_collection ~ '/' ~ imgset_category %}
+					{% set img_index = header.slider_preset_header < 10 ? '00' ~ (header.slider_preset_header + 1) : '0' ~ (header.slider_preset_header + 1) %}
+					{% set desktop_img = url ~ '/slides/' ~ img_index %}
+					{% set mobile_img = url ~ '/slides/mobile/' ~ img_index %}
+				{% else %}
+					{% set desktop_img = TimberImage(header.slide_background_image).src %}
+					{% set mobile_img = TimberImage(header.background_image_mobile).src %}
+				{% endif %}
+
+				{# if gradient is checked #}
 				{% if header.has_gradient_header == 1 %}
 					{% set gradient = header.gradient_header_option %}
 				{% else %}

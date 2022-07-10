@@ -1,19 +1,19 @@
 <?php
 
 // load the css + js for the image header popup selector in WP's page editor
-add_action( 'admin_print_scripts-post-new.php', 'int_pageheader_admin_script', 11 );
-add_action( 'admin_print_scripts-post.php', 'int_pageheader_admin_script', 11 );
+add_action( 'admin_print_scripts-post-new.php', 'int_pageheader_admin_script', 10 );
+add_action( 'admin_print_scripts-post.php', 'int_pageheader_admin_script', 10 );
 function int_pageheader_admin_script() {
     global $post_type;
     if( 'page' == $post_type || 'promo_btn' == $post_type || 'locations' == $post_type || 'post' == $post_type || 'hp_slides' == $post_type )
-    wp_enqueue_script( 'pageheader-admin-script', get_template_directory() .'/assets/functions/js/headerimg.js' );
+    wp_enqueue_script( 'pageheader-admin-script', get_stylesheet_directory_uri() . '/assets/functions/js/headerimg.js' );
 }
-add_action( 'admin_print_styles-post-new.php', 'int_pageheader_admin_styles', 11 );
-add_action( 'admin_print_styles-post.php', 'int_pageheader_admin_styles', 11 );
+add_action( 'admin_print_styles-post-new.php', 'int_pageheader_admin_styles', 10 );
+add_action( 'admin_print_styles-post.php', 'int_pageheader_admin_styles', 10 );
 function int_pageheader_admin_styles() {
     global $post_type;
     if( 'page' == $post_type || 'promo_btn' == $post_type || 'locations' == $post_type || 'post' == $post_type || 'hp_slides' == $post_type )
-    wp_enqueue_style( 'pageheader-admin-styles', get_template_directory() .'/assets/functions/css/headerimg.css' );
+    wp_enqueue_style( 'pageheader-admin-styles', get_stylesheet_directory_uri() .'/assets/functions/css/headerimg.css' );
 }
 
 
@@ -45,8 +45,8 @@ if ($img_collection == 'aveda') {
 // $headerchoices = array_combine($header_id, $header_thumb); // e.g., [2, 003.jpg] or [3, 004.jpg]
 
 
-
-
+// var_dump($current_screen->post_type);
+// echo $_GET['post_type'];
 
 $base_url = 'https://res.cloudinary.com/imaginal-marketing-group/image/upload/';
 
@@ -56,28 +56,47 @@ $cloudinary_images = $cloudinary->searchApi()
 ->maxResults(50)
 ->execute();
 
-$resources = $cloudinary_images['resources'];
+$header_resources = $cloudinary_images['resources'];
 $img_array = array();
-foreach ($resources as $key => $header_img) {
+foreach ($header_resources as $key => $header_img) {
 	$img_array[$key] = '<span class="headimg_thumb" style="background-image: url(https://res.cloudinary.com/imaginal-marketing-group/image/upload/'  . $img_collection . '/' . $img_preset . '/' . $header_img['filename'] . '.webp)"></span>';
 }
 $headerchoices = $img_array;
 
 
+
+// HOMEPAGE SLIDES
+// $cloudinary_header_images = $cloudinary->searchApi()
+// ->expression('resource_type=image AND folder:' . $img_collection . '/' . $img_preset)
+// ->sortBy('filename','asc')
+// ->maxResults(50)
+// ->execute();
+
+// $header_resources = $cloudinary_images['resources'];
+// $img_array = array();
+// foreach ($header_resources as $key => $header_img) {
+// 	$img_array[$key] = '<span class="headimg_thumb" style="background-image: url(https://res.cloudinary.com/imaginal-marketing-group/image/upload/'  . $img_collection . '/' . $img_preset . '/slides/' . $header_img['filename'] . '.webp)"></span>';
+// }
+// $slides_choices = $img_array;
+
+
+
+
+
 // Home header
-$slides_imgset_url = 'https://imaginalhosting.com/wp-themes/images/img/'; // path to your img collection
-$slides_data = file_get_contents($slides_imgset_url . $img_collection . '/' . $img_preset . '.json'); // put the contents of the file into a variable
+// $slides_imgset_url = 'https://imaginalhosting.com/wp-themes/images/img/'; // path to your img collection
+// $slides_data = file_get_contents($slides_imgset_url . $img_collection . '/' . $img_preset . '.json'); // put the contents of the file into a variable
 // header images dropdown
-$slides_image_array = json_decode($slides_data, true);
-$slides_images = array_column($slides_image_array, 'image');
-$slides_thumb = array();
-$slides_id = array();
-foreach ($slides_image_array as $key => $slides_image) {
-  $slides_thumb[] = '<span class="headimg_thumb" style="background-image: url('.$slides_imgset_url.'/'.$slides_image["image"].');"></span>';
-  $slides_id[] = $slides_image["id"];
-}
+// $slides_image_array = json_decode($slides_data, true);
+// $slides_images = array_column($slides_image_array, 'image');
+// $slides_thumb = array();
+// $slides_id = array();
+// foreach ($slides_image_array as $key => $slides_image) {
+//   $slides_thumb[] = '<span class="headimg_thumb" style="background-image: url('.$slides_imgset_url.'/'.$slides_image["image"].');"></span>';
+//   $slides_id[] = $slides_image["id"];
+// }
 //$header_id = array_column(json_decode($data, true), 'id');
-$slides_choices = array_combine($slides_id, $slides_thumb); // e.g., [2, 003.jpg] or [3, 004.jpg]
+// $slides_choices = array_combine($slides_id, $slides_thumb); // e.g., [2, 003.jpg] or [3, 004.jpg]
 
 
 // dropdown style/functionality
